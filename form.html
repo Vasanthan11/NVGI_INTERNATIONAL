@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NVGI - Enquiry Form</title>
+
+  <!-- Google Fonts: Raleway & Roboto -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* Global reset + box sizing */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    /* FORM POPUP OVERLAY */
+    .nvgi-form-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      display: none; /* hidden by default */
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      z-index: 2000;
+    }
+
+    .nvgi-form-overlay.nvgi-form-open {
+      display: flex;
+    }
+
+    /* FORM MODAL CARD */
+    .nvgi-form-modal {
+      width: 100%;
+      max-width: 900px;
+      background: #ffffff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+      border: 1px solid rgba(13, 94, 166, 0.08);
+      display: flex;
+      flex-direction: row;
+      min-height: 360px;
+    }
+
+    /* LEFT INFO PANEL */
+    .nvgi-form-sidebar {
+      width: 38%;
+      min-width: 260px;
+      background: linear-gradient(145deg, #0D5EA6, #3674B5);
+      color: #FFFcfb;
+      padding: 1.4rem 1.4rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .nvgi-form-sidebar-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .nvgi-form-sidebar-title {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .nvgi-form-sidebar-subtitle {
+      font-size: 0.82rem;
+      opacity: 0.95;
+    }
+
+    .nvgi-form-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nvgi-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem 0.65rem;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      text-decoration: none;
+      background: #FFFcfb;
+      color: #0D5EA6;
+      border: 1px solid rgba(255, 252, 251, 0.9);
+      font-family: "Raleway", system-ui, sans-serif;
+      font-weight: 500;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.08s ease;
+      white-space: nowrap;
+    }
+
+    .nvgi-chip:hover {
+      background: #A16D28;
+      color: #FFFcfb;
+      transform: translateY(1px);
+    }
+
+    .nvgi-contact-block {
+      font-size: 0.8rem;
+      line-height: 1.45;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .nvgi-contact-block strong {
+      font-weight: 600;
+    }
+
+    .nvgi-contact-block a {
+      color: #FFFcfb;
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(255, 252, 251, 0.6);
+    }
+
+    .nvgi-contact-block a:hover {
+      border-bottom-style: solid;
+    }
+
+    .nvgi-contact-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .nvgi-form-hours {
+      font-size: 0.78rem;
+      opacity: 0.95;
+    }
+
+    /* RIGHT FORM PANEL */
+    .nvgi-form-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nvgi-form-header {
+      padding: 0.9rem 1.2rem 0.6rem;
+      border-bottom: 1px solid #f0f1f4;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nvgi-form-title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .nvgi-form-title {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #222222;
+    }
+
+    .nvgi-form-subtitle {
+      font-size: 0.8rem;
+      color: #555555;
+    }
+
+    .nvgi-form-close {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      border: 1px solid #d7dde5;
+      background: #ffffff;
+      color: #333333;
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .nvgi-form-body {
+      padding: 1rem 1.2rem 1.2rem;
+      background: #ffffff;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nvgi-form-description {
+      font-size: 0.8rem;
+      margin-bottom: 0.9rem;
+      color: #444444;
+    }
+
+    .nvgi-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      .nvgi-form-modal {
+        flex-direction: column;
+      }
+      .nvgi-form-sidebar {
+        width: 100%;
+      }
+      .nvgi-form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .nvgi-form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.8rem;
+    }
+
+    .nvgi-form-label {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-weight: 500;
+      color: #222222;
+    }
+
+    .nvgi-form-label span {
+      color: #E63946;
+    }
+
+    .nvgi-form-input,
+    .nvgi-form-select,
+    .nvgi-form-textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #d7dde5;
+      padding: 0.5rem 0.6rem;
+      font-size: 0.85rem;
+      font-family: "Roboto", system-ui, sans-serif;
+      outline: none;
+      background: #FFFcfb;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+      appearance: none;
+    }
+
+    .nvgi-form-input:focus,
+    .nvgi-form-select:focus,
+    .nvgi-form-textarea:focus {
+      border-color: #0D5EA6;
+      box-shadow: 0 0 0 1px rgba(13, 94, 166, 0.12);
+      background: #ffffff;
+    }
+
+    .nvgi-form-textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .nvgi-form-footer {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .nvgi-btn-submit {
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      padding: 0.65rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 999px;
+      font-family: "Raleway", system-ui, sans-serif;
+      background: #0D5EA6; /* base button color */
+      color: #FFFcfb;      /* “dark white” text */
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.08s ease;
+    }
+
+    /* Hover: brown (#A16D28) with #FFFcfb text */
+    .nvgi-btn-submit:hover {
+      background: #A16D28;
+      color: #FFFcfb;
+    }
+
+    .nvgi-btn-submit:active {
+      transform: translateY(1px);
+    }
+
+    .nvgi-form-note {
+      font-size: 0.75rem;
+      color: #666666;
+      line-height: 1.4;
+    }
+
+    .nvgi-form-note strong {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <!-- FORM POPUP OVERLAY (will be opened from navbar buttons and section buttons) -->
+  <div class="nvgi-form-overlay nvgi-form-open" id="nvgi-form-overlay">
+
+    <div class="nvgi-form-modal">
+      <!-- LEFT SIDE: COMPANY DETAILS + CHIPS -->
+      <aside class="nvgi-form-sidebar">
+        <div class="nvgi-form-sidebar-header">
+          <div class="nvgi-form-sidebar-title">Contact NVGI</div>
+          <div class="nvgi-form-sidebar-subtitle">
+            Textile machinery &amp; access equipment – rentals &amp; sales in UAE.
+          </div>
+        </div>
+
+        <!-- Chip-style anchor tags -->
+        <div class="nvgi-form-chips">
+          <a href="#nvgi-form-main" class="nvgi-chip">Fast response</a>
+          <a href="#nvgi-form-main" class="nvgi-chip">Expert support</a>
+          <a href="#nvgi-form-main" class="nvgi-chip">Reliable fleet</a>
+        </div>
+
+        <!-- Company details -->
+        <div class="nvgi-contact-block">
+          <div class="nvgi-contact-lines">
+            <div>
+              <strong>Phone:</strong>
+              <a href="tel:+971507287749">+971 50 728 7749</a>
+            </div>
+            <div>
+              <strong>Email:</strong>
+              <a href="mailto:sales@nvgi.com">sales@nvgi.com</a>
+            </div>
+          </div>
+
+          <div>
+            <strong>Address:</strong><br />
+            NVGI International DMCC<br />
+            Unit no. 2320, DMCC Business Centre,<br />
+            Level No.1, Jewellery &amp; Gemplex 3,<br />
+            Dubai, UAE
+          </div>
+
+          <div class="nvgi-form-hours">
+            <strong>Working hours:</strong><br />
+            9:00 AM – 7:00 PM (UAE time), Sunday to Saturday
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT SIDE: FORM -->
+      <section class="nvgi-form-main" id="nvgi-form-main">
+        <div class="nvgi-form-header">
+          <div class="nvgi-form-title-group">
+            <div class="nvgi-form-title">Quick enquiry</div>
+            <div class="nvgi-form-subtitle">
+              Select sale or rental and the equipment type – we’ll get back shortly.
+            </div>
+          </div>
+          <button
+            type="button"
+            class="nvgi-form-close"
+            id="nvgi-form-close"
+            aria-label="Close enquiry form"
+          >
+            ×
+          </button>
+        </div>
+
+        <div class="nvgi-form-body">
+          <p class="nvgi-form-description">
+            Please fill in your details below. Our team will contact you with pricing,
+            availability and options tailored to your requirement.
+          </p>
+
+          <form action="submit-form.php" method="post" class="nvgi-form" autocomplete="on">
+            <div class="nvgi-form-grid">
+              <!-- Name -->
+              <div class="nvgi-form-field">
+                <label for="nvgi-name" class="nvgi-form-label">
+                  Name <span>*</span>
+                </label>
+                <input
+                  type="text"
+                  id="nvgi-name"
+                  name="name"
+                  class="nvgi-form-input"
+                  placeholder="Your full name"
+                  required
+                />
+              </div>
+
+              <!-- Mobile Number -->
+              <div class="nvgi-form-field">
+                <label for="nvgi-mobile" class="nvgi-form-label">
+                  Mobile number <span>*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="nvgi-mobile"
+                  name="mobile"
+                  class="nvgi-form-input"
+                  placeholder="+971 50 000 0000"
+                  required
+                />
+              </div>
+
+              <!-- Email -->
+              <div class="nvgi-form-field">
+                <label for="nvgi-email" class="nvgi-form-label">
+                  Email <span></span>
+                </label>
+                <input
+                  type="email"
+                  id="nvgi-email"
+                  name="email"
+                  class="nvgi-form-input"
+                  placeholder="you@example.com"
+                  
+                />
+              </div>
+
+              <!-- Section: Rental or Sale -->
+              <div class="nvgi-form-field">
+                <label for="nvgi-section" class="nvgi-form-label">
+                  Section (Sale or Rent) <span></span>
+                </label>
+                <select
+                  id="nvgi-section"
+                  name="section"
+                  class="nvgi-form-select"
+                  
+                >
+                  <option value="" disabled selected>Select section</option>
+                  <option value="rental">Rental</option>
+                  <option value="sale">Sale</option>
+                  <option value="both">Both / Not sure</option>
+                </select>
+              </div>
+
+              <!-- Equipment Type -->
+              <div class="nvgi-form-field">
+                <label for="nvgi-equipment" class="nvgi-form-label">
+                  Equipment type <span></span>
+                </label>
+                <select
+                  id="nvgi-equipment"
+                  name="equipment_type"
+                  class="nvgi-form-select"
+                  
+                >
+                  <option value="" disabled selected>Select equipment</option>
+                  <option value="boom_lifts">Boom lifts</option>
+                  <option value="scissor_lifts">Scissor lifts</option>
+                  <option value="telehandlers">Telehandlers</option>
+                  <option value="other">Other machinery</option>
+                </select>
+              </div>
+
+              <!-- Message / Requirements (full width) -->
+              <div class="nvgi-form-field" style="grid-column: 1 / -1;">
+                <label for="nvgi-message" class="nvgi-form-label">
+                  Requirements / message
+                </label>
+                <textarea
+                  id="nvgi-message"
+                  name="message"
+                  class="nvgi-form-textarea"
+                  placeholder="Eg. Required working height, rental period, location, quantity…"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="nvgi-form-footer">
+              <button type="submit" class="nvgi-btn-submit">
+                Submit enquiry
+              </button>
+
+              <p class="nvgi-form-note">
+                By submitting this form you agree to be contacted by
+                <strong>NVGI International DMCC</strong> by phone or email regarding your request.
+              </p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const overlay = document.getElementById("nvgi-form-overlay");
+      const closeBtn = document.getElementById("nvgi-form-close");
+
+      // Buttons from navbar or other sections (if they exist on the page)
+      const openBtnDesktop = document.getElementById("nvgi-open-form-desktop");
+      const openBtnMobile = document.getElementById("nvgi-open-form-mobile");
+
+      function openForm() {
+        if (!overlay) return;
+        overlay.classList.add("nvgi-form-open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeForm() {
+        if (!overlay) return;
+        overlay.classList.remove("nvgi-form-open");
+        document.body.style.overflow = "";
+      }
+
+      // Expose global helper so section buttons can call window.nvgiOpenForm()
+      window.nvgiOpenForm = openForm;
+
+      if (openBtnDesktop) {
+        openBtnDesktop.addEventListener("click", openForm);
+      }
+
+      if (openBtnMobile) {
+        openBtnMobile.addEventListener("click", openForm);
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener("click", closeForm);
+      }
+
+      if (overlay) {
+        overlay.addEventListener("click", function (event) {
+          if (event.target === overlay) {
+            closeForm();
+          }
+        });
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && overlay && overlay.classList.contains("nvgi-form-open")) {
+          closeForm();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

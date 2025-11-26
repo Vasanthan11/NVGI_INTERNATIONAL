@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact – NVGI International DMCC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ========== GLOBAL RESET & BASE ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --nvgi-blue: #0D5EA6;
+      --nvgi-blue-soft: #3674B5;
+      --nvgi-gold: #EAA64D;
+      --nvgi-brown: #A16D28;
+      --nvgi-cream: #FFFcfb;
+      --nvgi-dark: #111111;
+      --nvgi-border: #d7dde5;
+      --nvgi-radius-lg: 18px;
+      --nvgi-radius-md: 12px;
+      --nvgi-radius-pill: 999px;
+    }
+
+    html, body {
+      font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1rem;
+      background: #ffffff;
+      color: var(--nvgi-dark);
+      scroll-behavior: smooth;
+    }
+
+    @media (max-width: 768px) {
+      html, body {
+        font-size: 0.95rem; /* not less than 0.9rem */
+      }
+    }
+
+    main {
+      min-height: 100vh;
+    }
+
+    .nvgi-section {
+      padding: 3.5rem 0;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .nvgi-section {
+        padding: 2.5rem 0;
+      }
+    }
+
+    .nvgi-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      width: 100%;
+    }
+
+    .nvgi-section-title {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .nvgi-section-kicker {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--nvgi-blue);
+      margin-bottom: 0.4rem;
+    }
+
+    .nvgi-section-text {
+      font-size: 1.05rem;
+      max-width: 720px;
+      line-height: 1.7;
+      color: #313131;
+    }
+
+    .nvgi-section-actions {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    /* ========== NAVBAR ========== */
+    .nvgi-navbar-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .nvgi-navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nvgi-navbar-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nvgi-navbar-logo img {
+      width: 122px;
+      height: 52px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .nvgi-navbar-links {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: center;
+      line-height: 22px;
+    }
+
+    .nvgi-navbar-links a {
+      text-decoration: none;
+      color: #222222;
+      white-space: nowrap;
+      font-family: "Raleway", system-ui, sans-serif;
+      padding: 0.15rem 0;
+      transition: color 0.15s ease;
+    }
+
+    .nvgi-navbar-links a:hover {
+      color: var(--nvgi-blue);
+    }
+
+    .nvgi-navbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+ .nvgi-btn {
+      border: none;
+      cursor: pointer;
+      padding: 0.8rem 1.5rem;
+      font-size: 0.98rem;
+      font-weight: 600;
+      border-radius: var(--nvgi-radius-pill);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      font-family: "Raleway", system-ui, sans-serif;
+      background: var(--nvgi-blue);
+      color: var(--nvgi-cream);
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.08s ease;
+    }
+
+    .nvgi-btn:hover {
+      background: var(--nvgi-brown);
+      color: var(--nvgi-cream);
+      transform: translateY(1px);
+    }
+
+    .nvgi-btn-outline {
+      background: var(--nvgi-cream);
+      color: var(--nvgi-blue);
+      border: 1px solid var(--nvgi-blue);
+    }
+
+    .nvgi-btn-outline:hover {
+      background: var(--nvgi-brown);
+      color: var(--nvgi-cream);
+      border-color: var(--nvgi-brown);
+    }
+
+    .nvgi-navbar-hamburger {
+      display: none;
+      width: 32px;
+      height: 32px;
+      border-radius: var(--nvgi-radius-pill);
+      border: 1px solid #dddddd;
+      background: #ffffff;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .nvgi-navbar-hamburger span {
+      display: block;
+      width: 16px;
+      height: 2px;
+      background: #111111;
+      position: relative;
+    }
+
+    .nvgi-navbar-hamburger span::before,
+    .nvgi-navbar-hamburger span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 16px;
+      height: 2px;
+      background: #111111;
+    }
+
+    .nvgi-navbar-hamburger span::before {
+      top: -5px;
+    }
+
+    .nvgi-navbar-hamburger span::after {
+      top: 5px;
+    }
+
+    .nvgi-mobile-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 999;
+    }
+
+    .nvgi-mobile-overlay.nvgi-mobile-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nvgi-mobile-menu {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 70vh;
+      max-height: 480px;
+      background: #ffffff;
+      border-radius: 16px 16px 0 0;
+      transform: translateY(100%);
+      transition: transform 0.25s ease-out;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 1rem 1.25rem;
+    }
+
+    .nvgi-mobile-overlay.nvgi-mobile-open .nvgi-mobile-menu {
+      transform: translateY(0%);
+    }
+
+    .nvgi-mobile-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .nvgi-mobile-menu-title {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nvgi-mobile-close {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--nvgi-radius-pill);
+      border: 1px solid #dddddd;
+      background: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .nvgi-mobile-nav {
+      flex: 1;
+      overflow-y: auto;
+      padding-top: 0.5rem;
+    }
+
+    .nvgi-mobile-nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .nvgi-mobile-nav a {
+      text-decoration: none;
+      color: #111111;
+      font-size: 1rem;
+      font-weight: 500;
+      font-family: "Raleway", system-ui, sans-serif;
+    }
+
+    .nvgi-mobile-nav a:hover {
+      color: var(--nvgi-blue);
+    }
+
+    .nvgi-mobile-actions {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .nvgi-navbar {
+        padding-inline: 0.75rem;
+      }
+
+      .nvgi-navbar-links,
+      .nvgi-navbar-actions {
+        display: none;
+      }
+
+      .nvgi-navbar-hamburger {
+        display: inline-flex;
+      }
+    }
+
+    @media (min-width: 901px) {
+      .nvgi-mobile-overlay {
+        display: none;
+      }
+    }
+
+    /* ========== SECTION 1: CONTACT HERO ========== */
+    .nvgi-hero-contact {
+      background: radial-gradient(circle at top left, #f5f9ff 0, #ffffff 40%, #eef4ff 100%);
+    }
+
+    .nvgi-hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .nvgi-hero-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .nvgi-hero-title {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-size: 2rem;
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+    }
+
+    .nvgi-hero-subtitle {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-size: 1.15rem;
+      color: #444444;
+      margin-bottom: 1.1rem;
+    }
+
+    .nvgi-hero-text {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      max-width: 640px;
+    }
+
+    .nvgi-contact-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+
+    .nvgi-contact-card {
+      border-radius: var(--nvgi-radius-md);
+      border: 1px solid #eceef3;
+      background: #ffffff;
+      padding: 0.9rem 1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+      font-size: 1rem;
+    }
+
+    .nvgi-contact-card strong {
+      font-family: "Raleway", system-ui, sans-serif;
+    }
+
+    .nvgi-contact-card a {
+      color: var(--nvgi-blue);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(13,94,166,0.5);
+    }
+
+    .nvgi-contact-card a:hover {
+      border-bottom-style: solid;
+    }
+
+    /* ========== SECTION 2: DETAILS & QUICK LINKS ========== */
+    .nvgi-details-section {
+      background: #ffffff;
+    }
+
+    .nvgi-two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      margin-top: 1.5rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .nvgi-two-column {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .nvgi-list {
+      list-style: none;
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-top: 0.45rem;
+      color: #333333;
+    }
+
+    .nvgi-list li::before {
+      content: "•";
+      color: var(--nvgi-blue);
+      margin-right: 0.4rem;
+    }
+
+    .nvgi-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
+    }
+
+    .nvgi-pill {
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--nvgi-radius-pill);
+      border: 1px solid #e2e4ea;
+      background: #ffffff;
+      font-size: 0.98rem;
+    }
+
+    .nvgi-details-card {
+      border-radius: var(--nvgi-radius-md);
+      padding: 1rem;
+      border: 1px solid #eceef3;
+      background: linear-gradient(135deg,#ffffff,#f7f9ff);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.03);
+      font-size: 1rem;
+    }
+
+    /* ========== SECTION 3: LOCATION & CTA ========== */
+    .nvgi-location-section {
+      background: radial-gradient(circle at top left, #fff3e4 0, #ffffff 40%, #f3f7ff 100%);
+    }
+
+    .nvgi-location-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      margin-top: 1.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .nvgi-location-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .nvgi-map-box {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #0b2644;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+      position: relative;
+    }
+
+    .nvgi-map-box img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      opacity: 0.94;
+      display: block;
+    }
+
+    .nvgi-map-tag {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      background: rgba(0,0,0,0.55);
+      color: var(--nvgi-cream);
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--nvgi-radius-pill);
+      font-size: 0.95rem;
+      font-family: "Raleway", system-ui, sans-serif;
+    }
+
+    @media (max-width: 900px) {
+      .nvgi-map-box img {
+        height: 230px;
+      }
+    }
+
+    .nvgi-location-text {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #333333;
+    }
+
+    .nvgi-location-badges {
+      margin-top: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nvgi-location-badge {
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--nvgi-radius-pill);
+      border: 1px solid #ece0cb;
+      background: #ffffff;
+      font-size: 0.98rem;
+    }
+
+    /* ========== SECTION 4: BOTTOM CONTACT FORM ========== */
+    .nvgi-bottom-form-section {
+      background: #ffffff;
+    }
+
+    .nvgi-bottom-form-box {
+  border-radius: 20px;
+  border: 1px solid #eceef3;
+  background: radial-gradient(circle at top, #f7f9ff 0, #ffffff 55%, #fff3e4 100%);
+  padding: 1.8rem 1.6rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.06);
+  max-width: 920px;
+  margin: 1.8rem auto 0; /* <-- this line centers it */
+}
+
+    .nvgi-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      .nvgi-form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .nvgi-form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 1rem;
+    }
+
+    .nvgi-form-label {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-weight: 500;
+      color: #222222;
+    }
+
+    .nvgi-form-label span {
+      color: #E63946;
+    }
+
+    .nvgi-form-input,
+    .nvgi-form-select,
+    .nvgi-form-textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #d7dde5;
+      padding: 0.55rem 0.6rem;
+      font-size: 1rem;
+      font-family: "Roboto", system-ui, sans-serif;
+      outline: none;
+      background: var(--nvgi-cream);
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+      appearance: none;
+    }
+
+    .nvgi-form-input:focus,
+    .nvgi-form-select:focus,
+    .nvgi-form-textarea:focus {
+      border-color: var(--nvgi-blue);
+      box-shadow: 0 0 0 1px rgba(13, 94, 166, 0.12);
+      background: #ffffff;
+    }
+
+    .nvgi-form-textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .nvgi-form-footer {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .nvgi-btn-submit {
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      padding: 0.7rem 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 999px;
+      font-family: "Raleway", system-ui, sans-serif;
+      background: var(--nvgi-blue);
+      color: var(--nvgi-cream);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.08s ease;
+    }
+
+    .nvgi-btn-submit:hover {
+      background: var(--nvgi-brown);
+      color: var(--nvgi-cream);
+    }
+
+    .nvgi-btn-submit:active {
+      transform: translateY(1px);
+    }
+
+    .nvgi-form-note {
+      font-size: 0.95rem;
+      color: #666666;
+      line-height: 1.4;
+    }
+
+    .nvgi-form-note strong {
+      font-weight: 600;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      width: 100%;
+      background: #ffffff;
+      border-top: 1px solid #e5e5e5;
+      padding: 1rem;
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      font-size: 0.98rem;
+      color: #111111;
+    }
+
+    @media (max-width: 900px) {
+      footer {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+      }
+    }
+
+    /* ========== FORM POPUP (modal) ========== */
+    .nvgi-form-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      z-index: 2000;
+    }
+
+    .nvgi-form-overlay.nvgi-form-open {
+      display: flex;
+    }
+
+    .nvgi-form-modal {
+      width: 100%;
+      max-width: 900px;
+      background: #ffffff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+      border: 1px solid rgba(13, 94, 166, 0.08);
+      display: flex;
+      flex-direction: row;
+      min-height: 360px;
+    }
+
+    .nvgi-form-sidebar {
+      width: 38%;
+      min-width: 260px;
+      background: linear-gradient(145deg, var(--nvgi-blue), var(--nvgi-blue-soft));
+      color: var(--nvgi-cream);
+      padding: 1.4rem 1.4rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .nvgi-form-sidebar-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .nvgi-form-sidebar-title {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .nvgi-form-sidebar-subtitle {
+      font-size: 1rem;
+      opacity: 0.95;
+    }
+
+    .nvgi-form-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nvgi-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem 0.65rem;
+      font-size: 0.98rem;
+      border-radius: 999px;
+      text-decoration: none;
+      background: var(--nvgi-cream);
+      color: var(--nvgi-blue);
+      border: 1px solid rgba(255, 252, 251, 0.9);
+      font-family: "Raleway", system-ui, sans-serif;
+      font-weight: 500;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.08s ease;
+      white-space: nowrap;
+    }
+
+    .nvgi-chip:hover {
+      background: var(--nvgi-brown);
+      color: var(--nvgi-cream);
+      transform: translateY(1px);
+    }
+
+    .nvgi-contact-block {
+      font-size: 1rem;
+      line-height: 1.45;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .nvgi-contact-block strong {
+      font-weight: 600;
+    }
+
+    .nvgi-contact-block a {
+      color: var(--nvgi-cream);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(255, 252, 251, 0.6);
+    }
+
+    .nvgi-contact-block a:hover {
+      border-bottom-style: solid;
+    }
+
+    .nvgi-contact-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .nvgi-form-hours {
+      font-size: 0.98rem;
+      opacity: 0.95;
+    }
+
+    .nvgi-form-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nvgi-form-header {
+      padding: 0.9rem 1.2rem 0.6rem;
+      border-bottom: 1px solid #f0f1f4;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nvgi-form-title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .nvgi-form-title {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #222222;
+    }
+
+    .nvgi-form-subtitle {
+      font-size: 1rem;
+      color: #555555;
+    }
+
+    .nvgi-form-close {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      border: 1px solid #d7dde5;
+      background: #ffffff;
+      color: #333333;
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .nvgi-form-body {
+      padding: 1rem 1.2rem 1.2rem;
+      background: #ffffff;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nvgi-form-description {
+      font-size: 1rem;
+      margin-bottom: 0.9rem;
+      color: #444444;
+    }
+
+    /* popup form reuses .nvgi-form-grid, .nvgi-form-field, .nvgi-form-input etc */
+
+    /* ========== SCROLL REVEAL ========== */
+    [data-sr] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    [data-sr="left"] {
+      transform: translateX(-40px);
+    }
+
+    [data-sr="right"] {
+      transform: translateX(40px);
+    }
+
+    .sr-visible {
+      opacity: 1;
+      transform: translateX(0) translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="nvgi-navbar-wrapper">
+    <header class="nvgi-navbar">
+      <a href="index.html" class="nvgi-navbar-logo">
+        <!-- Replace this with your logo -->
+        <img src="./images/logo-nv.png" alt="Company logo" />
+      </a>
+
+      <nav class="nvgi-navbar-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="textile-machinery.html">Textile Machinery <br> Import &amp; Export</a>
+        <a href="rental-boom-scissor-telehandlers.html">Boom Lifts, Scissor Lifts <br> &amp; Telehandlers Rental</a>
+        <a href="used-boom-scissor-machinery-sale.html">Boom Lifts, Scissor Lifts <br> &amp; Used Machinery for Sale</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nvgi-navbar-actions">
+        <button type="button" class="nvgi-btn" id="nvgi-open-form-desktop">
+          Get in touch
+        </button>
+        <a href="tel:+971507287749" class="nvgi-btn nvgi-btn-outline">
+          Call us
+        </a>
+      </div>
+
+      <button
+        class="nvgi-navbar-hamburger"
+        id="nvgi-nav-hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        <span></span>
+      </button>
+    </header>
+  </div>
+
+  <!-- MOBILE NAV MENU -->
+  <div class="nvgi-mobile-overlay" id="nvgi-mobile-overlay" aria-hidden="true">
+    <div class="nvgi-mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+      <div class="nvgi-mobile-menu-header">
+        <div class="nvgi-mobile-menu-title">Menu</div>
+        <button
+          class="nvgi-mobile-close"
+          id="nvgi-mobile-close"
+          aria-label="Close navigation menu"
+        >
+          ×
+        </button>
+      </div>
+
+      <nav class="nvgi-mobile-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="textile-machinery.html">Textile Machinery Import &amp; Export</a></li>
+          <li><a href="rental-boom-scissor-telehandlers.html">Boom Lifts, Scissor Lifts &amp; Telehandlers Rental</a></li>
+          <li><a href="used-boom-scissor-machinery-sale.html">Boom Lifts, Scissor Lifts &amp; Used Machinery for Sale</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nvgi-mobile-actions">
+          <button type="button" class="nvgi-btn" id="nvgi-open-form-mobile">
+            Get in touch
+          </button>
+          <a href="tel:+971507287749" class="nvgi-btn nvgi-btn-outline">
+            Call us
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <!-- SECTION 1: CONTACT HERO -->
+    <section class="nvgi-section nvgi-hero-contact">
+      <div class="nvgi-container nvgi-hero-inner">
+        <div data-sr="left">
+          <div class="nvgi-section-kicker">Contact NVGI International DMCC</div>
+          <h1 class="nvgi-hero-title">
+            Share your textile or construction machinery requirement
+          </h1>
+          <p class="nvgi-hero-subtitle">
+            Import &amp; export, rental or used machinery – one contact point for all enquiries.
+          </p>
+          <p class="nvgi-hero-text">
+            Use the contact details below or the quick enquiry form to reach our team. Share your application,
+            capacity and timelines, and we will respond with suitable directions around import/export, rental or
+            used machinery options.
+          </p>
+
+          <div class="nvgi-section-actions">
+            <button type="button" class="nvgi-btn" onclick="window.nvgiOpenForm()">
+              Click here to open enquiry form
+            </button>
+            <a href="#bottom-contact-form" class="nvgi-btn nvgi-btn-outline">
+              Scroll to bottom contact form
+            </a>
+          </div>
+        </div>
+
+        <aside class="nvgi-contact-cards" data-sr="right">
+          <div class="nvgi-contact-card">
+            <strong>Phone (WhatsApp / Call):</strong><br />
+            <a href="tel:+971507287749">+971 50 728 7749</a>
+          </div>
+          <div class="nvgi-contact-card">
+            <strong>Email:</strong><br />
+            <a href="mailto:sales@nvgi.com">sales@nvgi.com</a>
+          </div>
+          <div class="nvgi-contact-card">
+            <strong>Working hours:</strong><br />
+            9:00 AM – 7:00 PM (UAE time), Sunday to Saturday
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SECTION 2: COMPANY DETAILS & QUICK LINKS -->
+    <section class="nvgi-section nvgi-details-section">
+      <div class="nvgi-container">
+        <div data-sr="left">
+          <div class="nvgi-section-kicker">Company details</div>
+          <h2 class="nvgi-section-title">
+            NVGI International DMCC – Dubai, UAE
+          </h2>
+          <p class="nvgi-section-text">
+            Based out of DMCC, Dubai, NVGI International DMCC supports clients in textile and construction
+            segments with machinery requirements across import/export, rental and used sales. You can contact
+            us for specific machines or broader project requirements.
+          </p>
+        </div>
+
+        <div class="nvgi-two-column">
+          <div data-sr="left">
+            <ul class="nvgi-list">
+              <li>Import &amp; export of textile machinery.</li>
+              <li>Construction machinery trade and movements.</li>
+              <li>Rental of boom lifts, scissor lifts &amp; telehandlers.</li>
+              <li>Used machinery sales where budgets need to be optimised.</li>
+            </ul>
+
+            <div class="nvgi-pill-row">
+              <span class="nvgi-pill">Textile machinery trade</span>
+              <span class="nvgi-pill">Construction access equipment</span>
+              <span class="nvgi-pill">Rental &amp; used sales</span>
+            </div>
+
+            <div class="nvgi-section-actions">
+              <button type="button" class="nvgi-btn" onclick="window.nvgiOpenForm()">
+                Click here to share project brief
+              </button>
+            </div>
+          </div>
+
+          <div class="nvgi-details-card" data-sr="right">
+            <p>
+              <strong>Registered office:</strong><br />
+              NVGI International DMCC<br />
+              Unit no. 2320, DMCC Business Centre,<br />
+              Level No.1, Jewellery &amp; Gemplex 3,<br />
+              Dubai, UAE
+            </p>
+            <br />
+            <p>
+              <strong>Primary contact:</strong><br />
+              Phone: <a href="tel:+971507287749">+971 50 728 7749</a><br />
+              Email: <a href="mailto:sales@nvgi.com">sales@nvgi.com</a>
+            </p>
+            <br />
+            <p>
+              <strong>Recommended next step:</strong><br />
+              Share a short note with your application (textile or construction), location and whether you are
+              looking at import/export, rental or used machinery. We will revert with next steps.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: LOCATION & CTA -->
+    <section class="nvgi-section nvgi-location-section">
+      <div class="nvgi-container">
+        <div data-sr="left">
+          <div class="nvgi-section-kicker">Location &amp; response</div>
+          <h2 class="nvgi-section-title">
+            Dubai-based contact with regional &amp; international reach
+          </h2>
+        </div>
+
+        <div class="nvgi-location-grid">
+          <div class="nvgi-map-box" data-sr="left">
+            <!-- Replace with actual location / map image -->
+            <img src="./images/SCI-02.jpg" alt="NVGI International DMCC location in Dubai" />
+            <div class="nvgi-map-tag">
+              <!-- Example visual – DMCC Business Centre, Jewellery &amp; Gemplex 3 -->
+            </div>
+          </div>
+
+          <div data-sr="right">
+            <p class="nvgi-location-text">
+              NVGI International DMCC operates from Dubai, UAE, supporting textile and construction clients in
+              different markets. Most discussions start with a short email or call, followed by sharing of your
+              machine list, project details or working height requirements.
+            </p>
+
+            <div class="nvgi-location-badges">
+              <span class="nvgi-location-badge">Import &amp; export discussions</span>
+              <span class="nvgi-location-badge">Rental &amp; used machinery</span>
+              <span class="nvgi-location-badge">Project-specific enquiries</span>
+            </div>
+
+            <div class="nvgi-section-actions">
+              <button type="button" class="nvgi-btn" onclick="window.nvgiOpenForm()">
+                Open quick enquiry form (popup)
+              </button>
+              <a href="#bottom-contact-form" class="nvgi-btn nvgi-btn-outline">
+                Scroll to detailed contact form
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: BOTTOM STATIC CONTACT FORM -->
+    <section class="nvgi-section nvgi-bottom-form-section" id="bottom-contact-form">
+      <div class="nvgi-container">
+        <div data-sr="left">
+          <div class="nvgi-section-kicker">Send a detailed enquiry</div>
+          <h2 class="nvgi-section-title">
+            Contact form – import/export, rental or used machinery
+          </h2>
+          <p class="nvgi-section-text">
+            Use the form below to share your details and machinery requirements. You can specify whether you are
+            looking at rental, used sales or import/export support along with basic project information.
+          </p>
+        </div>
+
+        <div class="nvgi-bottom-form-box" data-sr="right">
+          <form action="submit-form.php" method="post" class="nvgi-form" autocomplete="on">
+            <div class="nvgi-form-grid">
+              <div class="nvgi-form-field">
+                <label for="contact-name" class="nvgi-form-label">
+                  Name <span>*</span>
+                </label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  class="nvgi-form-input"
+                  placeholder="Your full name"
+                  required
+                />
+              </div>
+
+              <div class="nvgi-form-field">
+                <label for="contact-company" class="nvgi-form-label">
+                  Company
+                </label>
+                <input
+                  type="text"
+                  id="contact-company"
+                  name="company"
+                  class="nvgi-form-input"
+                  placeholder="Your company name (optional)"
+                />
+              </div>
+
+              <div class="nvgi-form-field">
+                <label for="contact-mobile" class="nvgi-form-label">
+                  Mobile number <span>*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="contact-mobile"
+                  name="mobile"
+                  class="nvgi-form-input"
+                  placeholder="+971 50 000 0000"
+                  required
+                />
+              </div>
+
+              <div class="nvgi-form-field">
+                <label for="contact-email" class="nvgi-form-label">
+                  Email <span></span>
+                </label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  class="nvgi-form-input"
+                  placeholder="you@example.com"
+                  
+                />
+              </div>
+
+              <div class="nvgi-form-field">
+                <label for="contact-section" class="nvgi-form-label">
+                  Section (Sale or Rent) <span></span>
+                </label>
+                <select
+                  id="contact-section"
+                  name="section"
+                  class="nvgi-form-select"
+                  
+                >
+                  <option value="" disabled selected>Select section</option>
+                  <option value="rental">Rental</option>
+                  <option value="sale">Sale</option>
+                  <option value="import_export">Import / Export</option>
+                  <option value="both">Combination / Not sure</option>
+                </select>
+              </div>
+
+              <div class="nvgi-form-field">
+                <label for="contact-equipment" class="nvgi-form-label">
+                  Equipment type <span></span>
+                </label>
+                <select
+                  id="contact-equipment"
+                  name="equipment_type"
+                  class="nvgi-form-select"
+                  
+                >
+                  <option value="" disabled selected>Select equipment</option>
+                  <option value="textile_machinery">Textile machinery</option>
+                  <option value="boom_lifts">Boom lifts</option>
+                  <option value="scissor_lifts">Scissor lifts</option>
+                  <option value="telehandlers">Telehandlers</option>
+                  <option value="other">Other machinery</option>
+                </select>
+              </div>
+
+              <div class="nvgi-form-field" style="grid-column: 1 / -1;">
+                <label for="contact-message" class="nvgi-form-label">
+                  Requirements / message
+                </label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  class="nvgi-form-textarea"
+                  placeholder="Eg. Application type, working height, quantity, rental duration or import/export route, location…"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="nvgi-form-footer">
+              <button type="submit" class="nvgi-btn-submit">
+                Submit enquiry
+              </button>
+
+              <p class="nvgi-form-note">
+                By submitting this form you agree to be contacted by
+                <strong>NVGI International DMCC</strong> by phone or email regarding your request.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 <strong>NVGI International DMCC</strong> — All rights reserved.
+  </footer>
+
+  <!-- ========== FORM POPUP (form.html load fragment at bottom) ========== -->
+  <div class="nvgi-form-overlay" id="nvgi-form-overlay">
+    <div class="nvgi-form-modal">
+      <!-- LEFT SIDE: COMPANY DETAILS + CHIPS -->
+      <aside class="nvgi-form-sidebar">
+        <div class="nvgi-form-sidebar-header">
+          <div class="nvgi-form-sidebar-title">Contact NVGI</div>
+          <div class="nvgi-form-sidebar-subtitle">
+            Textile machinery &amp; access equipment – rentals &amp; sales in UAE.
+          </div>
+        </div>
+
+        <div class="nvgi-form-chips">
+          <a href="#nvgi-form-main" class="nvgi-chip">Fast response</a>
+          <a href="#nvgi-form-main" class="nvgi-chip">Expert support</a>
+          <a href="#nvgi-form-main" class="nvgi-chip">Reliable fleet</a>
+        </div>
+
+        <div class="nvgi-contact-block">
+          <div class="nvgi-contact-lines">
+            <div>
+              <strong>Phone:</strong>
+              <a href="tel:+971507287749">+971 50 728 7749</a>
+            </div>
+            <div>
+              <strong>Email:</strong>
+              <a href="mailto:sales@nvgi.com">sales@nvgi.com</a>
+            </div>
+          </div>
+
+          <div>
+            <strong>Address:</strong><br />
+            NVGI International DMCC<br />
+            Unit no. 2320, DMCC Business Centre,<br />
+            Level No.1, Jewellery &amp; Gemplex 3,<br />
+            Dubai, UAE
+          </div>
+
+          <div class="nvgi-form-hours">
+            <strong>Working hours:</strong><br />
+            9:00 AM – 7:00 PM (UAE time), Sunday to Saturday
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT SIDE: POPUP FORM -->
+      <section class="nvgi-form-main" id="nvgi-form-main">
+        <div class="nvgi-form-header">
+          <div class="nvgi-form-title-group">
+            <div class="nvgi-form-title">Quick enquiry</div>
+            <div class="nvgi-form-subtitle">
+              Select sale or rent and the equipment type – we’ll get back shortly.
+            </div>
+          </div>
+          <button
+            type="button"
+            class="nvgi-form-close"
+            id="nvgi-form-close"
+            aria-label="Close enquiry form"
+          >
+            ×
+          </button>
+        </div>
+
+        <div class="nvgi-form-body">
+          <p class="nvgi-form-description">
+            Please fill in your details below. Our team will contact you with pricing, availability and options
+            tailored to your requirement.
+          </p>
+
+          <form action="submit-form.php" method="post" class="nvgi-form" autocomplete="on">
+            <div class="nvgi-form-grid">
+              <div class="nvgi-form-field">
+                <label for="nvgi-name" class="nvgi-form-label">
+                  Name <span>*</span>
+                </label>
+                <input
+                  type="text"
+                  id="nvgi-name"
+                  name="name"
+                  class="nvgi-form-input"
+                  placeholder="Your full name"
+                  required
+                />
+              </div>
+
+              <div class="nvgi-form-field">
+                <label for="nvgi-mobile" class="nvgi-form-label">
+                  Mobile number <span>*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="nvgi-mobile"
+                  name="mobile"
+                  class="nvgi-form-input"
+                  placeholder="+971 50 000 0000"
+                  required
+                />
+              </div>
+
+              <div class="nvgi-form-field">
+                <label for="nvgi-email" class="nvgi-form-label">
+                  Email <span></span>
+                </label>
+                <input
+                  type="email"
+                  id="nvgi-email"
+                  name="email"
+                  class="nvgi-form-input"
+                  placeholder="you@example.com"
+                  
+                />
+              </div>
+
+              <div class="nvgi-form-field">
+                <label for="nvgi-section" class="nvgi-form-label">
+                  Section (Sale or Rent) <span></span>
+                </label>
+                <select
+                  id="nvgi-section"
+                  name="section"
+                  class="nvgi-form-select"
+                  
+                >
+                  <option value="" disabled selected>Select section</option>
+                  <option value="rental">Rental</option>
+                  <option value="sale">Sale</option>
+                  <option value="both">Both / Not sure</option>
+                </select>
+              </div>
+
+              <div class="nvgi-form-field">
+                <label for="nvgi-equipment" class="nvgi-form-label">
+                  Equipment type <span></span>
+                </label>
+                <select
+                  id="nvgi-equipment"
+                  name="equipment_type"
+                  class="nvgi-form-select"
+                  
+                >
+                  <option value="" disabled selected>Select equipment</option>
+                  <option value="boom_lifts">Boom lifts</option>
+                  <option value="scissor_lifts">Scissor lifts</option>
+                  <option value="telehandlers">Telehandlers</option>
+                  <option value="other">Other machinery</option>
+                </select>
+              </div>
+
+              <div class="nvgi-form-field" style="grid-column: 1 / -1;">
+                <label for="nvgi-message" class="nvgi-form-label">
+                  Requirements / message
+                </label>
+                <textarea
+                  id="nvgi-message"
+                  name="message"
+                  class="nvgi-form-textarea"
+                  placeholder="Eg. Textile line, construction equipment, rental or used, location, timelines…"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="nvgi-form-footer">
+              <button type="submit" class="nvgi-btn-submit">
+                Submit enquiry
+              </button>
+
+              <p class="nvgi-form-note">
+                By submitting this form you agree to be contacted by
+                <strong>NVGI International DMCC</strong> by phone or email regarding your request.
+              </p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      /* NAV: mobile menu */
+      const hamburger = document.getElementById("nvgi-nav-hamburger");
+      const navOverlay = document.getElementById("nvgi-mobile-overlay");
+      const navCloseBtn = document.getElementById("nvgi-mobile-close");
+
+      function openMenu() {
+        if (!navOverlay) return;
+        navOverlay.classList.add("nvgi-mobile-open");
+        navOverlay.setAttribute("aria-hidden", "false");
+        if (hamburger) hamburger.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeMenu() {
+        if (!navOverlay) return;
+        navOverlay.classList.remove("nvgi-mobile-open");
+        navOverlay.setAttribute("aria-hidden", "true");
+        if (hamburger) hamburger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+
+      if (hamburger) hamburger.addEventListener("click", openMenu);
+      if (navCloseBtn) navCloseBtn.addEventListener("click", closeMenu);
+      if (navOverlay) {
+        navOverlay.addEventListener("click", function (event) {
+          if (event.target === navOverlay) closeMenu();
+        });
+      }
+
+      /* FORM POPUP */
+      const formOverlay = document.getElementById("nvgi-form-overlay");
+      const formCloseBtn = document.getElementById("nvgi-form-close");
+      const openBtnDesktop = document.getElementById("nvgi-open-form-desktop");
+      const openBtnMobile = document.getElementById("nvgi-open-form-mobile");
+
+      function openForm() {
+        if (!formOverlay) return;
+        formOverlay.classList.add("nvgi-form-open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeForm() {
+        if (!formOverlay) return;
+        formOverlay.classList.remove("nvgi-form-open");
+        document.body.style.overflow = "";
+      }
+
+      window.nvgiOpenForm = openForm;
+
+      if (openBtnDesktop) openBtnDesktop.addEventListener("click", openForm);
+      if (openBtnMobile) openBtnMobile.addEventListener("click", openForm);
+      if (formCloseBtn) formCloseBtn.addEventListener("click", closeForm);
+      if (formOverlay) {
+        formOverlay.addEventListener("click", function (event) {
+          if (event.target === formOverlay) closeForm();
+        });
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          if (navOverlay && navOverlay.classList.contains("nvgi-mobile-open")) closeMenu();
+          if (formOverlay && formOverlay.classList.contains("nvgi-form-open")) closeForm();
+        }
+      });
+
+      /* SCROLL REVEAL */
+      const srElements = document.querySelectorAll("[data-sr]");
+      const srObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("sr-visible");
+              srObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.15,
+        }
+      );
+
+      srElements.forEach((el) => srObserver.observe(el));
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Boom Lifts, Scissor Lifts &amp; Telehandlers Rental – NVGI International DMCC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ========== GLOBAL RESET & BASE ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --nvgi-blue: #0D5EA6;
+      --nvgi-blue-soft: #3674B5;
+      --nvgi-gold: #EAA64D;
+      --nvgi-brown: #A16D28;
+      --nvgi-cream: #FFFcfb;
+      --nvgi-dark: #111111;
+      --nvgi-border: #d7dde5;
+      --nvgi-radius-lg: 18px;
+      --nvgi-radius-md: 12px;
+      --nvgi-radius-pill: 999px;
+      --nvgi-shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.14);
+    }
+
+    html, body {
+      font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1rem;
+      background: #ffffff;
+      color: var(--nvgi-dark);
+      scroll-behavior: smooth;
+    }
+
+    @media (max-width: 768px) {
+      html, body {
+        font-size: 0.95rem; /* not less than 0.9rem */
+      }
+    }
+
+    main {
+      min-height: 100vh;
+    }
+
+    .nvgi-section {
+      padding: 3.5rem 0;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .nvgi-section {
+        padding: 2.5rem 0;
+        min-height: 80vh;
+      }
+    }
+
+    .nvgi-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      width: 100%;
+    }
+
+    .nvgi-section-title {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .nvgi-section-kicker {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--nvgi-blue);
+      margin-bottom: 0.4rem;
+    }
+
+    .nvgi-section-text {
+      font-size: 0.95rem;
+      max-width: 720px;
+      line-height: 1.7;
+      color: #313131;
+     
+    }
+
+    /* ========== NAVBAR (same as navbar.html) ========== */
+    .nvgi-navbar-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .nvgi-navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nvgi-navbar-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nvgi-navbar-logo img {
+      width: 122px;
+      height: 52px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .nvgi-navbar-links {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: center;
+      line-height: 22px;
+    }
+
+    .nvgi-navbar-links a {
+      text-decoration: none;
+      color: #222222;
+      white-space: nowrap;
+      font-family: "Raleway", system-ui, sans-serif;
+      padding: 0.15rem 0;
+      transition: color 0.15s ease;
+    }
+
+    .nvgi-navbar-links a:hover {
+      color: var(--nvgi-blue);
+    }
+
+    .nvgi-navbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .nvgi-btn {
+      border: none;
+      cursor: pointer;
+      padding: 0.8rem 1.5rem;
+      font-size: 0.98rem;
+      font-weight: 600;
+      border-radius: var(--nvgi-radius-pill);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      font-family: "Raleway", system-ui, sans-serif;
+      background: var(--nvgi-blue);
+      color: var(--nvgi-cream);
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.08s ease;
+    }
+
+    .nvgi-btn:hover {
+      background: var(--nvgi-brown);
+      color: var(--nvgi-cream);
+      transform: translateY(1px);
+    }
+
+    .nvgi-btn-outline {
+      background: var(--nvgi-cream);
+      color: var(--nvgi-blue);
+      border: 1px solid var(--nvgi-blue);
+    }
+
+    .nvgi-btn-outline:hover {
+      background: var(--nvgi-brown);
+      color: var(--nvgi-cream);
+      border-color: var(--nvgi-brown);
+    }
+
+    .nvgi-navbar-hamburger {
+      display: none;
+      width: 32px;
+      height: 32px;
+      border-radius: var(--nvgi-radius-pill);
+      border: 1px solid #dddddd;
+      background: #ffffff;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .nvgi-navbar-hamburger span {
+      display: block;
+      width: 16px;
+      height: 2px;
+      background: #111111;
+      position: relative;
+    }
+
+    .nvgi-navbar-hamburger span::before,
+    .nvgi-navbar-hamburger span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 16px;
+      height: 2px;
+      background: #111111;
+    }
+
+    .nvgi-navbar-hamburger span::before {
+      top: -5px;
+    }
+
+    .nvgi-navbar-hamburger span::after {
+      top: 5px;
+    }
+
+    .nvgi-mobile-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 999;
+    }
+
+    .nvgi-mobile-overlay.nvgi-mobile-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nvgi-mobile-menu {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 70vh;
+      max-height: 480px;
+      background: #ffffff;
+      border-radius: 16px 16px 0 0;
+      transform: translateY(100%);
+      transition: transform 0.25s ease-out;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 1rem 1.25rem;
+    }
+
+    .nvgi-mobile-overlay.nvgi-mobile-open .nvgi-mobile-menu {
+      transform: translateY(0%);
+    }
+
+    .nvgi-mobile-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .nvgi-mobile-menu-title {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nvgi-mobile-close {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--nvgi-radius-pill);
+      border: 1px solid #dddddd;
+      background: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .nvgi-mobile-nav {
+      flex: 1;
+      overflow-y: auto;
+      padding-top: 0.5rem;
+    }
+
+    .nvgi-mobile-nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .nvgi-mobile-nav a {
+      text-decoration: none;
+      color: #111111;
+      font-size: 1rem;
+      font-weight: 500;
+      font-family: "Raleway", system-ui, sans-serif;
+    }
+
+    .nvgi-mobile-nav a:hover {
+      color: var(--nvgi-blue);
+    }
+
+    .nvgi-mobile-actions {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .nvgi-navbar {
+        padding-inline: 0.75rem;
+      }
+
+      .nvgi-navbar-links,
+      .nvgi-navbar-actions {
+        display: none;
+      }
+
+      .nvgi-navbar-hamburger {
+        display: inline-flex;
+      }
+    }
+
+    @media (min-width: 901px) {
+      .nvgi-mobile-overlay {
+        display: none;
+      }
+    }
+
+    /* ========== SECTION 1: HERO – RENTAL OVERVIEW ========== */
+    .nvgi-hero-rental {
+      background: radial-gradient(circle at top left, #f5f9ff 0, #ffffff 40%, #eef4ff 100%);
+    }
+
+    .nvgi-hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .nvgi-hero-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .nvgi-hero-kicker {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--nvgi-blue);
+      margin-bottom: 0.7rem;
+    }
+
+    .nvgi-hero-title {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-size: 2rem;
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+    }
+
+    .nvgi-hero-subtitle {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-size: 1.2rem;
+      color: #444444;
+      margin-bottom: 1.1rem;
+    }
+
+    .nvgi-hero-text {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      max-width: 640px;
+    }
+
+    .nvgi-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .nvgi-hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nvgi-badge {
+      border-radius: var(--nvgi-radius-pill);
+      padding: 0.3rem 0.8rem;
+      border: 1px solid #e2e4ea;
+      background: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.98rem;
+    }
+
+    .nvgi-hero-visuals {
+      display: grid;
+      grid-template-rows: auto auto;
+      gap: 1rem;
+    }
+
+    .nvgi-hero-image-main {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 22px 55px rgba(13, 94, 166, 0.35);
+      background: #000;
+      position: relative;
+    }
+
+    .nvgi-hero-image-main img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .nvgi-hero-tag {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      background: rgba(0, 0, 0, 0.55);
+      color: var(--nvgi-cream);
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--nvgi-radius-pill);
+      font-size: 0.95rem;
+      font-family: "Raleway", system-ui, sans-serif;
+    }
+
+    .nvgi-hero-thumbs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.6rem;
+    }
+
+    .nvgi-hero-thumb {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #0c2945;
+      box-shadow: 0 12px 30px rgba(13, 94, 166, 0.35);
+    }
+
+    .nvgi-hero-thumb img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .nvgi-hero-image-main img {
+        height: 210px;
+      }
+      .nvgi-hero-thumb img {
+        height: 70px;
+      }
+    }
+
+    /* ========== SECTION 2: FLEET OVERVIEW ========== */
+    .nvgi-two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      margin-top: 1.5rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .nvgi-two-column {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .nvgi-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .nvgi-grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .nvgi-card {
+      border-radius: var(--nvgi-radius-md);
+      padding: 1rem;
+      border: 1px solid #eceef3;
+      background: #ffffff;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.03);
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .nvgi-card-title {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .nvgi-card-text {
+      font-size: 1rem;
+      color: #4a4a4a;
+      flex: 1;
+    }
+
+    .nvgi-list {
+      list-style: none;
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-top: 0.45rem;
+      color: #333333;
+    }
+
+    .nvgi-list li::before {
+      content: "•";
+      color: var(--nvgi-blue);
+      margin-right: 0.4rem;
+    }
+
+    .nvgi-fleet-visual {
+      display: grid;
+      grid-template-rows: auto auto;
+      gap: 1rem;
+    }
+
+    .nvgi-fleet-image {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+    }
+
+    .nvgi-fleet-image img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .nvgi-fleet-strip {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.6rem;
+    }
+
+    .nvgi-fleet-strip-item {
+      border-radius: 14px;
+      overflow: hidden;
+      background: #0c2945;
+      box-shadow: 0 10px 30px rgba(13, 94, 166, 0.4);
+    }
+
+    .nvgi-fleet-strip-item img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .nvgi-fleet-image img {
+        height: 180px;
+      }
+      .nvgi-fleet-strip-item img {
+        height: 100px;
+      }
+    }
+
+    /* ========== SECTION 3: USE CASES (BLUE BG + IMAGE) ========== */
+    .nvgi-usecases {
+      background: linear-gradient(135deg, var(--nvgi-blue), var(--nvgi-blue-soft));
+      color: var(--nvgi-cream);
+    }
+
+    .nvgi-usecases .nvgi-section-kicker,
+    .nvgi-usecases .nvgi-section-title {
+      color: var(--nvgi-cream);
+    }
+
+    .nvgi-usecases .nvgi-section-text {
+      color: #f7f2ea;
+    }
+
+    .nvgi-usecases-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      margin-top: 1.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .nvgi-usecases-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .nvgi-usecase-list {
+      list-style: none;
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+    }
+
+    .nvgi-usecase-list li::before {
+      content: "•";
+      color: var(--nvgi-gold);
+      margin-right: 0.4rem;
+    }
+
+    .nvgi-usecase-image {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.45);
+      position: relative;
+    }
+
+    .nvgi-usecase-image img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .nvgi-usecase-tag {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--nvgi-radius-pill);
+      font-size: 0.95rem;
+      font-family: "Raleway", system-ui, sans-serif;
+    }
+
+    @media (max-width: 900px) {
+      .nvgi-usecase-image img {
+        height: 220px;
+      }
+    }
+
+    /* ========== SECTION 4: RENTAL PACKAGES & PROCESS + BANNER ========== */
+    .nvgi-packages {
+      background: radial-gradient(circle at top right, #fff1de 0, #ffffff 50%, #f3f7ff 100%);
+    }
+
+    .nvgi-packages-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      margin-top: 1.5rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .nvgi-packages-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .nvgi-flow-card {
+      border-radius: var(--nvgi-radius-md);
+      background: #f4f7fc;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      border: 1px solid #dde1eb;
+    }
+
+    .nvgi-flow-step {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      font-size: 1rem;
+    }
+
+    .nvgi-flow-step-number {
+      width: 26px;
+      height: 26px;
+      border-radius: var(--nvgi-radius-pill);
+      background: var(--nvgi-blue);
+      color: var(--nvgi-cream);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.98rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .nvgi-flow-step-text span {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-weight: 600;
+    }
+
+    .nvgi-packages-box {
+      border-radius: var(--nvgi-radius-md);
+      background: #ffffff;
+      padding: 1rem;
+      border: 1px solid #eceef3;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .nvgi-packages-box h3 {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .nvgi-packages-list {
+      list-style: none;
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .nvgi-packages-list li::before {
+      content: "•";
+      color: var(--nvgi-blue);
+      margin-right: 0.4rem;
+    }
+
+    .nvgi-banner {
+      margin-top: 2rem;
+      border-radius: 20px;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+      background-image: url("./images/new7.webp"); /* replace */
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 24px 60px rgba(13, 94, 166, 0.55);
+      padding: 1.6rem 1.4rem;
+      color: var(--nvgi-cream);
+    }
+
+    .nvgi-banner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(5, 20, 40, 0.75),
+        rgba(13, 94, 166, 0.6)
+      );
+      mix-blend-mode: multiply;
+    }
+
+    .nvgi-banner-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+    }
+
+    .nvgi-banner-title {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .nvgi-banner-text {
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+      opacity: 0.96;
+    }
+
+    /* ========== SECTION 5: SAFETY & SUPPORT ========== */
+    .nvgi-safety {
+      background: linear-gradient(135deg, #f7f9ff, #fffbe9);
+    }
+
+    .nvgi-safety-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      margin-top: 1.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .nvgi-safety-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .nvgi-safety-list {
+      list-style: none;
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+    }
+
+    .nvgi-safety-list li::before {
+      content: "•";
+      color: var(--nvgi-brown);
+      margin-right: 0.4rem;
+    }
+
+    .nvgi-safety-image {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.35);
+    }
+
+    .nvgi-safety-image img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .nvgi-safety-image img {
+        height: 200px;
+      }
+    }
+
+    /* ========== SECTION 6: GALLERY + CTA (LOTS OF IMAGES) ========== */
+    .nvgi-gallery-section {
+      background: radial-gradient(circle at top left, #fff1de 0, #ffffff 40%, #f3f7ff 100%);
+    }
+
+    .nvgi-gallery-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      margin-top: 1.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .nvgi-gallery-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .nvgi-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+
+    @media (max-width: 900px) {
+      .nvgi-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .nvgi-gallery-item {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--nvgi-blue), var(--nvgi-blue-soft));
+      cursor: pointer;
+      transform: translateY(0);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .nvgi-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1);
+      transition: transform 0.25s ease;
+    }
+
+    .nvgi-gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.45),
+        rgba(0, 0, 0, 0.05)
+      );
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 0.6rem;
+    }
+
+    .nvgi-gallery-label {
+      font-size: 0.95rem;
+      color: var(--nvgi-cream);
+      font-family: "Raleway", system-ui, sans-serif;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--nvgi-radius-pill);
+    }
+
+    .nvgi-gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .nvgi-gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .nvgi-gallery-item:hover .nvgi-gallery-overlay {
+      opacity: 1;
+    }
+
+    .nvgi-gallery-cta-title {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .nvgi-gallery-cta-text {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+      color: #3a3a3a;
+      line-height: 1.7;
+    }
+
+    .nvgi-gallery-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .nvgi-gallery-badge {
+      font-size: 0.98rem;
+      padding: 0.25rem 0.8rem;
+      border-radius: var(--nvgi-radius-pill);
+      background: #ffffff;
+      border: 1px solid #ece0cb;
+    }
+
+    .nvgi-section-actions {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    /* ========== FOOTER (footer.html) ========== */
+    footer {
+      width: 100%;
+      background: #ffffff;
+      border-top: 1px solid #e5e5e5;
+      padding: 1rem;
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      font-size: 0.98rem;
+      color: #111111;
+    }
+
+    @media (max-width: 900px) {
+      footer {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+      }
+    }
+
+    /* ========== FORM POPUP (form.html) ========== */
+    .nvgi-form-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      z-index: 2000;
+    }
+
+    .nvgi-form-overlay.nvgi-form-open {
+      display: flex;
+    }
+
+    .nvgi-form-modal {
+      width: 100%;
+      max-width: 900px;
+      background: #ffffff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+      border: 1px solid rgba(13, 94, 166, 0.08);
+      display: flex;
+      flex-direction: row;
+      min-height: 360px;
+    }
+
+    .nvgi-form-sidebar {
+      width: 38%;
+      min-width: 260px;
+      background: linear-gradient(145deg, var(--nvgi-blue), var(--nvgi-blue-soft));
+      color: var(--nvgi-cream);
+      padding: 1.4rem 1.4rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .nvgi-form-sidebar-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .nvgi-form-sidebar-title {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .nvgi-form-sidebar-subtitle {
+      font-size: 1rem;
+      opacity: 0.95;
+    }
+
+    .nvgi-form-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .nvgi-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem 0.65rem;
+      font-size: 0.98rem;
+      border-radius: 999px;
+      text-decoration: none;
+      background: var(--nvgi-cream);
+      color: var(--nvgi-blue);
+      border: 1px solid rgba(255, 252, 251, 0.9);
+      font-family: "Raleway", system-ui, sans-serif;
+      font-weight: 500;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.08s ease;
+      white-space: nowrap;
+    }
+
+    .nvgi-chip:hover {
+      background: var(--nvgi-brown);
+      color: var(--nvgi-cream);
+      transform: translateY(1px);
+    }
+
+    .nvgi-contact-block {
+      font-size: 1rem;
+      line-height: 1.45;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .nvgi-contact-block strong {
+      font-weight: 600;
+    }
+
+    .nvgi-contact-block a {
+      color: var(--nvgi-cream);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(255, 252, 251, 0.6);
+    }
+
+    .nvgi-contact-block a:hover {
+      border-bottom-style: solid;
+    }
+
+    .nvgi-contact-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .nvgi-form-hours {
+      font-size: 0.98rem;
+      opacity: 0.95;
+    }
+
+    .nvgi-form-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nvgi-form-header {
+      padding: 0.9rem 1.2rem 0.6rem;
+      border-bottom: 1px solid #f0f1f4;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nvgi-form-title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .nvgi-form-title {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #222222;
+    }
+
+    .nvgi-form-subtitle {
+      font-size: 1rem;
+      color: #555555;
+    }
+
+    .nvgi-form-close {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      border: 1px solid #d7dde5;
+      background: #ffffff;
+      color: #333333;
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .nvgi-form-body {
+      padding: 1rem 1.2rem 1.2rem;
+      background: #ffffff;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nvgi-form-description {
+      font-size: 1rem;
+      margin-bottom: 0.9rem;
+      color: #444444;
+    }
+
+    .nvgi-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      .nvgi-form-modal {
+        flex-direction: column;
+      }
+      .nvgi-form-sidebar {
+        width: 100%;
+      }
+      .nvgi-form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .nvgi-form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 1rem;
+    }
+
+    .nvgi-form-label {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-weight: 500;
+      color: #222222;
+    }
+
+    .nvgi-form-label span {
+      color: #E63946;
+    }
+
+    .nvgi-form-input,
+    .nvgi-form-select,
+    .nvgi-form-textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #d7dde5;
+      padding: 0.55rem 0.6rem;
+      font-size: 1rem;
+      font-family: "Roboto", system-ui, sans-serif;
+      outline: none;
+      background: var(--nvgi-cream);
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+      appearance: none;
+    }
+
+    .nvgi-form-input:focus,
+    .nvgi-form-select:focus,
+    .nvgi-form-textarea:focus {
+      border-color: var(--nvgi-blue);
+      box-shadow: 0 0 0 1px rgba(13, 94, 166, 0.12);
+      background: #ffffff;
+    }
+
+    .nvgi-form-textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .nvgi-form-footer {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .nvgi-btn-submit {
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      padding: 0.7rem 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 999px;
+      font-family: "Raleway", system-ui, sans-serif;
+      background: var(--nvgi-blue);
+      color: var(--nvgi-cream);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.08s ease;
+    }
+
+    .nvgi-btn-submit:hover {
+      background: var(--nvgi-brown);
+      color: var(--nvgi-cream);
+    }
+
+    .nvgi-btn-submit:active {
+      transform: translateY(1px);
+    }
+
+    .nvgi-form-note {
+      font-size: 0.95rem;
+      color: #666666;
+      line-height: 1.4;
+    }
+
+    .nvgi-form-note strong {
+      font-weight: 600;
+    }
+
+    /* ========== SCROLL REVEAL ========== */
+    [data-sr] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    [data-sr="left"] {
+      transform: translateX(-40px);
+    }
+
+    [data-sr="right"] {
+      transform: translateX(40px);
+    }
+
+    .sr-visible {
+      opacity: 1;
+      transform: translateX(0) translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="nvgi-navbar-wrapper">
+    <header class="nvgi-navbar">
+       <a href="index.html" class="nvgi-navbar-logo">
+        <!-- Replace this with your logo -->
+        <img src="./images/logo-nv.png" alt="Company logo" />
+      </a>
+
+      <nav class="nvgi-navbar-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="textile-machinery.html">Textile Machinery <br> Import &amp; Export</a>
+        <a href="rental-boom-scissor-telehandlers.html">Boom Lifts, Scissor Lifts <br> &amp; Telehandlers Rental</a>
+        <a href="used-boom-scissor-machinery-sale.html">Boom Lifts, Scissor Lifts <br> &amp; Used Machinery for Sale</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nvgi-navbar-actions">
+        <button type="button" class="nvgi-btn" id="nvgi-open-form-desktop">
+          Get in touch
+        </button>
+        <a href="tel:+971507287749" class="nvgi-btn nvgi-btn-outline">
+          Call us
+        </a>
+      </div>
+
+      <button
+        class="nvgi-navbar-hamburger"
+        id="nvgi-nav-hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        <span></span>
+      </button>
+    </header>
+  </div>
+
+  <!-- MOBILE NAV MENU -->
+  <div class="nvgi-mobile-overlay" id="nvgi-mobile-overlay" aria-hidden="true">
+    <div class="nvgi-mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+      <div class="nvgi-mobile-menu-header">
+        <div class="nvgi-mobile-menu-title">Menu</div>
+        <button
+          class="nvgi-mobile-close"
+          id="nvgi-mobile-close"
+          aria-label="Close navigation menu"
+        >
+          ×
+        </button>
+      </div>
+
+      <nav class="nvgi-mobile-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="textile-machinery.html">Textile Machinery Import &amp; Export</a></li>
+          <li><a href="rental-boom-scissor-telehandlers.html">Boom Lifts, Scissor Lifts &amp; Telehandlers Rental</a></li>
+          <li><a href="used-boom-scissor-machinery-sale.html">Boom Lifts, Scissor Lifts &amp; Used Machinery for Sale</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nvgi-mobile-actions">
+          <button type="button" class="nvgi-btn" id="nvgi-open-form-mobile">
+            Get in touch
+          </button>
+          <a href="tel:+971507287749" class="nvgi-btn nvgi-btn-outline">
+            Call us
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <!-- SECTION 1: HERO – RENTAL OVERVIEW -->
+    <section class="nvgi-section nvgi-hero-rental">
+      <div class="nvgi-container nvgi-hero-inner">
+        <div data-sr="left">
+          <div class="nvgi-hero-kicker">Boom lifts • Scissor lifts • Telehandlers</div>
+          <h1 class="nvgi-hero-title">
+            Access equipment rental tailored to your project height, reach and duration
+          </h1>
+          <p class="nvgi-hero-subtitle">
+            Short and long-term boom lift, scissor lift and telehandler rentals supported from Dubai, UAE.
+          </p>
+          <p class="nvgi-hero-text">
+            NVGI International DMCC supports contractors, facility managers and industrial sites with reliable
+            access equipment. Share working height, reach, location and rental period – we help match it with
+            suitable equipment and practical rental terms.
+          </p>
+
+          <div class="nvgi-hero-actions">
+            <button type="button" class="nvgi-btn" onclick="window.nvgiOpenForm()">
+              Click here to request rental quote
+            </button>
+            <a href="mailto:sales@nvgi.com" class="nvgi-btn nvgi-btn-outline">
+              Email your equipment requirement
+            </a>
+          </div>
+
+          <div class="nvgi-hero-badges">
+            <div class="nvgi-badge">Articulated &amp; telescopic booms</div>
+            <div class="nvgi-badge">Indoor &amp; rough-terrain scissors</div>
+            <div class="nvgi-badge">Telehandlers for material handling</div>
+          </div>
+        </div>
+
+        <aside class="nvgi-hero-visuals" data-sr="right">
+          <div class="nvgi-hero-image-main">
+            <!-- IMAGE 1 -->
+            <img src="./images/new7.webp" alt="Boom lifts at construction site" />
+            <div class="nvgi-hero-tag">
+              Typical boom lifts on rental for façade and MEP works
+            </div>
+          </div>
+          <div class="nvgi-hero-thumbs">
+            <!-- IMAGE 2 -->
+            <div class="nvgi-hero-thumb">
+              <img src="./images/s5.webp" alt="Scissor lift rental" />
+            </div>
+            <!-- IMAGE 3 -->
+            <div class="nvgi-hero-thumb">
+              <img src="./images/tl01.webp" alt="Telehandler rental" />
+            </div>
+            <!-- IMAGE 4 -->
+            <div class="nvgi-hero-thumb">
+              <img src="./images/new10.jpg" alt="Indoor boom lift" />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SECTION 2: FLEET OVERVIEW -->
+    <section class="nvgi-section">
+      <div class="nvgi-container">
+        <div data-sr="left">
+          <div class="nvgi-section-kicker">Rental fleet overview</div>
+          <h2 class="nvgi-section-title">
+            Boom lifts, scissor lifts and telehandlers – aligned to working height and reach
+          </h2>
+          <p class="nvgi-section-text">
+            We focus on matching the right access equipment to your task – façade works, MEP installation, maintenance
+            shutdowns or warehouse operations. Discuss your application and we help you choose a suitable platform.
+          </p>
+        </div>
+
+        <div class="nvgi-two-column">
+          <div data-sr="left">
+            <div class="nvgi-grid-3">
+              <article class="nvgi-card">
+                <h3 class="nvgi-card-title">Boom Lifts</h3>
+                <p class="nvgi-card-text">
+                  Articulated and telescopic boom lifts for outdoor and indoor applications requiring outreach.
+                </p>
+                <ul class="nvgi-list">
+                  <li>Working heights suitable for façade &amp; high-level works.</li>
+                  <li>Options for rough-terrain and slab applications.</li>
+                  <li>Diesel and electric configurations (based on availability).</li>
+                </ul>
+                <button class="nvgi-btn nvgi-btn-outline" type="button" onclick="window.nvgiOpenForm()">
+                  Click here to <br> rent boom lifts
+                </button>
+              </article>
+
+              <article class="nvgi-card">
+                <h3 class="nvgi-card-title">Scissor Lifts</h3>
+                <p class="nvgi-card-text">
+                  Platform access where vertical height and platform space are more important than outreach.
+                </p>
+                <ul class="nvgi-list">
+                  <li>Indoor electric scissors for warehouses and malls.</li>
+                  <li>Rough-terrain scissors for construction sites.</li>
+                  <li>Suitable for MEP, fit-out and maintenance tasks.</li>
+                </ul>
+                <button class="nvgi-btn nvgi-btn-outline" type="button" onclick="window.nvgiOpenForm()">
+                  Click here to <br> rent scissor lifts
+                </button>
+              </article>
+
+              <article class="nvgi-card">
+                <h3 class="nvgi-card-title">Telehandlers</h3>
+                <p class="nvgi-card-text">
+                  Material handling equipment combining lifting height with forward reach for site logistics.
+                </p>
+                <ul class="nvgi-list">
+                  <li>Suitable for pallet and bulk handling.</li>
+                  <li>Useful for multi-level construction projects.</li>
+                  <li>Options for different capacities (subject to availability).</li>
+                </ul>
+                <button class="nvgi-btn nvgi-btn-outline" type="button" onclick="window.nvgiOpenForm()">
+                  Click here to <br> rent telehandlers
+                </button>
+              </article>
+            </div>
+          </div>
+
+          <div class="nvgi-fleet-visual" data-sr="right">
+            <div class="nvgi-fleet-image">
+              <!-- IMAGE 5 -->
+              <img src="./images/tl02.webp" alt="Fleet of access equipment" />
+            </div>
+            <div class="nvgi-fleet-strip">
+              <!-- IMAGE 6 -->
+              <div class="nvgi-fleet-strip-item">
+                <img src="./images/new4.webp" alt="Boom lift close-up" />
+              </div>
+              <!-- IMAGE 7 -->
+              <div class="nvgi-fleet-strip-item">
+                <img src="./images/sc01.webp" alt="Scissor lift close-up" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: USE CASES & INDUSTRIES -->
+    <section class="nvgi-section nvgi-usecases">
+      <div class="nvgi-container">
+        <div data-sr="left">
+          <div class="nvgi-section-kicker">Where rentals are used</div>
+          <h2 class="nvgi-section-title">
+            Construction, maintenance and industrial sites that depend on access equipment
+          </h2>
+          <p class="nvgi-section-text">
+            Access platforms are used across multiple industries. We work with you to understand site conditions
+            – ground level, access route, indoor/outdoor, obstructions – before recommending equipment.
+          </p>
+        </div>
+
+        <div class="nvgi-usecases-grid">
+          <div data-sr="left">
+            <ul class="nvgi-usecase-list">
+              <li>Building construction and façade works.</li>
+              <li>MEP installation, ducting and cable tray works.</li>
+              <li>Industrial maintenance shutdowns.</li>
+              <li>Warehouse racking and inventory operations.</li>
+              <li>Mall and commercial facility maintenance.</li>
+              <li>Signage, cladding and external lighting works.</li>
+            </ul>
+            <div class="nvgi-section-actions" style="margin-top: 1.4rem;">
+              <button type="button" class="nvgi-btn" onclick="window.nvgiOpenForm()">
+                Click here to match equipment to your use case
+              </button>
+            </div>
+          </div>
+
+          <div class="nvgi-usecase-image" data-sr="right">
+            <!-- IMAGE 8 -->
+            <img src="./images/new4.webp" alt="Boom lift used for facade work" />
+            <div class="nvgi-usecase-tag">
+              Example: boom lift rental for façade &amp; glass installation
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: RENTAL PACKAGES & PROCESS -->
+    <section class="nvgi-section nvgi-packages">
+      <div class="nvgi-container">
+        <div data-sr="left">
+          <div class="nvgi-section-kicker">Packages &amp; process</div>
+          <h2 class="nvgi-section-title">
+            Rental periods, inclusions and a simple step-by-step process
+          </h2>
+        </div>
+
+        <div class="nvgi-packages-grid">
+          <div data-sr="left">
+            <div class="nvgi-flow-card">
+              <div class="nvgi-flow-step">
+                <div class="nvgi-flow-step-number">1</div>
+                <div class="nvgi-flow-step-text">
+                  <span>Share application &amp; site details</span><br />
+                  Working height, outreach, location, access route, indoor/outdoor and expected start date.
+                </div>
+              </div>
+              <div class="nvgi-flow-step">
+                <div class="nvgi-flow-step-number">2</div>
+                <div class="nvgi-flow-step-text">
+                  <span>Equipment matching</span><br />
+                  We recommend boom lifts, scissor lifts or telehandlers that suit your site and duration.
+                </div>
+              </div>
+              <div class="nvgi-flow-step">
+                <div class="nvgi-flow-step-number">3</div>
+                <div class="nvgi-flow-step-text">
+                  <span>Commercials &amp; availability</span><br />
+                  Sign-off on rental period, basic terms, transport and off-hire conditions.
+                </div>
+              </div>
+              <div class="nvgi-flow-step">
+                <div class="nvgi-flow-step-number">4</div>
+                <div class="nvgi-flow-step-text">
+                  <span>Delivery &amp; familiarisation</span><br />
+                  Equipment delivery to site and basic familiarisation for operators and supervisors.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="nvgi-packages-box" data-sr="right">
+            <h3>Rental options &amp; add-ons</h3>
+            <ul class="nvgi-packages-list">
+              <li>Short-term rental for specific tasks or shutdowns.</li>
+              <li>Longer-term rentals for extended projects.</li>
+              <li>Multiple machine packages for larger sites.</li>
+              <li>Support around mobilization/demobilization planning.</li>
+              <li>Used equipment sales when long-term is preferred.</li>
+            </ul>
+            <div class="nvgi-section-actions" style="margin-top: 1rem;">
+              <button type="button" class="nvgi-btn" onclick="window.nvgiOpenForm()">
+                Click here to discuss rental duration
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="nvgi-banner" data-sr="right">
+          <div class="nvgi-banner-inner">
+            <div class="nvgi-banner-title">Already know the height &amp; period?</div>
+            <div class="nvgi-banner-text">
+              If you already know your working height, outreach and rental period, share them along with site location.
+              We’ll respond with available options and a rental proposal.
+            </div>
+            <button type="button" class="nvgi-btn" onclick="window.nvgiOpenForm()">
+              Click here to send your rental brief
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: SAFETY & SUPPORT -->
+    <section class="nvgi-section nvgi-safety">
+      <div class="nvgi-container">
+        <div data-sr="left">
+          <div class="nvgi-section-kicker">Safety &amp; support</div>
+          <h2 class="nvgi-section-title">
+            Focus on safe use, basic checks and responsive support
+          </h2>
+          <p class="nvgi-section-text">
+            Access equipment is most effective when used correctly. We encourage trained operators, adherence to
+            safety practices and basic daily checks by users.
+          </p>
+        </div>
+
+        <div class="nvgi-safety-grid">
+          <div data-sr="left">
+            <ul class="nvgi-safety-list">
+              <li>Basic familiarisation at the time of delivery (where applicable).</li>
+              <li>Encouragement of pre-use checks by operators.</li>
+              <li>Guidance on ground conditions and safe positioning.</li>
+              <li>Support for reporting issues during the rental period.</li>
+              <li>Options to discuss machines for specific confined or complex areas.</li>
+            </ul>
+            <div class="nvgi-section-actions" style="margin-top: 1.4rem;">
+              <button type="button" class="nvgi-btn" onclick="window.nvgiOpenForm()">
+                Click here to discuss safety &amp; site conditions
+              </button>
+            </div>
+          </div>
+
+          <div class="nvgi-safety-image" data-sr="right">
+            <!-- IMAGE 9 -->
+            <img src="./images/DS02.jpg" alt="Operator using boom lift with safety harness" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: GALLERY & CTA (6+ IMAGES) -->
+    <section class="nvgi-section nvgi-gallery-section">
+      <div class="nvgi-container">
+        <div data-sr="left">
+          <div class="nvgi-section-kicker">Rental gallery</div>
+          <h2 class="nvgi-section-title">
+            Visual examples of typical boom lift, scissor lift &amp; telehandler rentals
+          </h2>
+        </div>
+
+        <div class="nvgi-gallery-layout">
+          <div class="nvgi-gallery-grid" data-sr="left">
+            <!-- IMAGE 10 -->
+            <div class="nvgi-gallery-item">
+              <img src="./images/DS01.jpg" alt="Boom lift on job site" />
+              <div class="nvgi-gallery-overlay">
+                <!-- <div class="nvgi-gallery-label">Boom lift – façade works</div> -->
+              </div>
+            </div>
+            <!-- IMAGE 11 -->
+            <div class="nvgi-gallery-item">
+              <img src="./images/new1.webp" alt="Boom lift working at height" />
+              <div class="nvgi-gallery-overlay">
+                <!-- <div class="nvgi-gallery-label">High-reach boom lift</div> -->
+              </div>
+            </div>
+            <!-- IMAGE 12 -->
+            <div class="nvgi-gallery-item">
+              <img src="./images/DS03.jpg" alt="Scissor lift indoor" />
+              <div class="nvgi-gallery-overlay">
+                <!-- <div class="nvgi-gallery-label">Indoor scissor lift</div> -->
+              </div>
+            </div>
+            <!-- IMAGE 13 -->
+            <div class="nvgi-gallery-item">
+              <img src="./images/tl01.webp" alt="Rough-terrain scissor" />
+              <div class="nvgi-gallery-overlay">
+                <!-- <div class="nvgi-gallery-label">Rough-terrain scissor</div> -->
+              </div>
+            </div>
+            <!-- IMAGE 14 -->
+            <div class="nvgi-gallery-item">
+              <img src="./images/new7.webp" alt="Telehandler on site" />
+              <div class="nvgi-gallery-overlay">
+                <!-- <div class="nvgi-gallery-label">Telehandler – material handling</div> -->
+              </div>
+            </div>
+            <!-- IMAGE 15 -->
+            <div class="nvgi-gallery-item">
+              <img src="./images/new10.jpg" alt="Telehandler lifting pallets" />
+              <div class="nvgi-gallery-overlay">
+                <!-- <div class="nvgi-gallery-label">Telehandler lifting pallets</div> -->
+              </div>
+            </div>
+          </div>
+
+          <div data-sr="right">
+            <h3 class="nvgi-gallery-cta-title">
+              Ready to plan boom lift, scissor lift or telehandler rentals?
+            </h3>
+            <p class="nvgi-gallery-cta-text">
+              Share your site details – location, working height, access route, indoor/outdoor and rental period – and
+              we will respond with suitable equipment options and a rental outline.
+            </p>
+
+            <div class="nvgi-gallery-badges">
+              <div class="nvgi-gallery-badge">Project-focused proposals</div>
+              <div class="nvgi-gallery-badge">Multiple equipment types</div>
+              <div class="nvgi-gallery-badge">Short &amp; long-term</div>
+            </div>
+
+            <div class="nvgi-section-actions">
+              <button type="button" class="nvgi-btn" onclick="window.nvgiOpenForm()">
+                Click here to request rental options
+              </button>
+              <a href="mailto:sales@nvgi.com" class="nvgi-btn nvgi-btn-outline">
+                Email your site &amp; height details
+              </a>
+            </div>
+
+            <br />
+            <p class="nvgi-section-text" style="max-width: 480px;">
+              Company: NVGI International DMCC<br />
+              Business: Rental &amp; used sales of access equipment<br />
+              Focus: Boom lifts, scissor lifts &amp; telehandlers for construction and maintenance projects
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 <strong>NVGI International DMCC</strong> — All rights reserved.
+  </footer>
+
+  <!-- FORM POPUP -->
+  <div class="nvgi-form-overlay" id="nvgi-form-overlay">
+    <div class="nvgi-form-modal">
+      <!-- LEFT SIDE: COMPANY DETAILS + CHIPS -->
+      <aside class="nvgi-form-sidebar">
+        <div class="nvgi-form-sidebar-header">
+          <div class="nvgi-form-sidebar-title">Contact NVGI</div>
+          <div class="nvgi-form-sidebar-subtitle">
+            Textile machinery &amp; access equipment – rentals &amp; sales in UAE.
+          </div>
+        </div>
+
+        <div class="nvgi-form-chips">
+          <a href="#nvgi-form-main" class="nvgi-chip">Fast response</a>
+          <a href="#nvgi-form-main" class="nvgi-chip">Expert support</a>
+          <a href="#nvgi-form-main" class="nvgi-chip">Reliable fleet</a>
+        </div>
+
+        <div class="nvgi-contact-block">
+          <div class="nvgi-contact-lines">
+            <div>
+              <strong>Phone:</strong>
+              <a href="tel:+971507287749">+971 50 728 7749</a>
+            </div>
+            <div>
+              <strong>Email:</strong>
+              <a href="mailto:sales@nvgi.com">sales@nvgi.com</a>
+            </div>
+          </div>
+
+          <div>
+            <strong>Address:</strong><br />
+            NVGI International DMCC<br />
+            Unit no. 2320, DMCC Business Centre,<br />
+            Level No.1, Jewellery &amp; Gemplex 3,<br />
+            Dubai, UAE
+          </div>
+
+          <div class="nvgi-form-hours">
+            <strong>Working hours:</strong><br />
+            9:00 AM – 7:00 PM (UAE time), Sunday to Saturday
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT SIDE: FORM -->
+      <section class="nvgi-form-main" id="nvgi-form-main">
+        <div class="nvgi-form-header">
+          <div class="nvgi-form-title-group">
+            <div class="nvgi-form-title">Quick enquiry</div>
+            <div class="nvgi-form-subtitle">
+              Select sale or rent and the equipment type – we’ll get back shortly.
+            </div>
+          </div>
+          <button
+            type="button"
+            class="nvgi-form-close"
+            id="nvgi-form-close"
+            aria-label="Close enquiry form"
+          >
+            ×
+          </button>
+        </div>
+
+        <div class="nvgi-form-body">
+          <p class="nvgi-form-description">
+            Please fill in your details below. Our team will contact you with pricing, availability and options
+            tailored to your requirement.
+          </p>
+
+          <form action="submit-form.php" method="post" class="nvgi-form" autocomplete="on">
+            <div class="nvgi-form-grid">
+              <div class="nvgi-form-field">
+                <label for="nvgi-name" class="nvgi-form-label">
+                  Name <span>*</span>
+                </label>
+                <input
+                  type="text"
+                  id="nvgi-name"
+                  name="name"
+                  class="nvgi-form-input"
+                  placeholder="Your full name"
+                  required
+                />
+              </div>
+
+              <div class="nvgi-form-field">
+                <label for="nvgi-mobile" class="nvgi-form-label">
+                  Mobile number <span>*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="nvgi-mobile"
+                  name="mobile"
+                  class="nvgi-form-input"
+                  placeholder="+971 50 000 0000"
+                  required
+                />
+              </div>
+
+              <div class="nvgi-form-field">
+                <label for="nvgi-email" class="nvgi-form-label">
+                  Email <span></span>
+                </label>
+                <input
+                  type="email"
+                  id="nvgi-email"
+                  name="email"
+                  class="nvgi-form-input"
+                  placeholder="you@example.com"
+                  
+                />
+              </div>
+
+              <div class="nvgi-form-field">
+                <label for="nvgi-section" class="nvgi-form-label">
+                  Section (Sale or Rent) <span></span>
+                </label>
+                <select
+                  id="nvgi-section"
+                  name="section"
+                  class="nvgi-form-select"
+                  
+                >
+                  <option value="" disabled selected>Select section</option>
+                  <option value="rental">Rental</option>
+                  <option value="sale">Sale</option>
+                  <option value="both">Both / Not sure</option>
+                </select>
+              </div>
+
+              <div class="nvgi-form-field">
+                <label for="nvgi-equipment" class="nvgi-form-label">
+                  Equipment type <span></span>
+                </label>
+                <select
+                  id="nvgi-equipment"
+                  name="equipment_type"
+                  class="nvgi-form-select"
+                  
+                >
+                  <option value="" disabled selected>Select equipment</option>
+                  <option value="boom_lifts">Boom lifts</option>
+                  <option value="scissor_lifts">Scissor lifts</option>
+                  <option value="telehandlers">Telehandlers</option>
+                  <option value="other">Other machinery</option>
+                </select>
+              </div>
+
+              <div class="nvgi-form-field" style="grid-column: 1 / -1;">
+                <label for="nvgi-message" class="nvgi-form-label">
+                  Requirements / message
+                </label>
+                <textarea
+                  id="nvgi-message"
+                  name="message"
+                  class="nvgi-form-textarea"
+                  placeholder="Eg. Working height, reach, rental period, indoor/outdoor, location, quantity…"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="nvgi-form-footer">
+              <button type="submit" class="nvgi-btn-submit">
+                Submit enquiry
+              </button>
+
+              <p class="nvgi-form-note">
+                By submitting this form you agree to be contacted by
+                <strong>NVGI International DMCC</strong> by phone or email regarding your request.
+              </p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      /* NAV: mobile menu */
+      const hamburger = document.getElementById("nvgi-nav-hamburger");
+      const navOverlay = document.getElementById("nvgi-mobile-overlay");
+      const navCloseBtn = document.getElementById("nvgi-mobile-close");
+
+      function openMenu() {
+        if (!navOverlay) return;
+        navOverlay.classList.add("nvgi-mobile-open");
+        navOverlay.setAttribute("aria-hidden", "false");
+        if (hamburger) hamburger.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeMenu() {
+        if (!navOverlay) return;
+        navOverlay.classList.remove("nvgi-mobile-open");
+        navOverlay.setAttribute("aria-hidden", "true");
+        if (hamburger) hamburger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+
+      if (hamburger) hamburger.addEventListener("click", openMenu);
+      if (navCloseBtn) navCloseBtn.addEventListener("click", closeMenu);
+      if (navOverlay) {
+        navOverlay.addEventListener("click", function (event) {
+          if (event.target === navOverlay) closeMenu();
+        });
+      }
+
+      /* FORM POPUP */
+      const formOverlay = document.getElementById("nvgi-form-overlay");
+      const formCloseBtn = document.getElementById("nvgi-form-close");
+      const openBtnDesktop = document.getElementById("nvgi-open-form-desktop");
+      const openBtnMobile = document.getElementById("nvgi-open-form-mobile");
+
+      function openForm() {
+        if (!formOverlay) return;
+        formOverlay.classList.add("nvgi-form-open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeForm() {
+        if (!formOverlay) return;
+        formOverlay.classList.remove("nvgi-form-open");
+        document.body.style.overflow = "";
+      }
+
+      window.nvgiOpenForm = openForm;
+
+      if (openBtnDesktop) openBtnDesktop.addEventListener("click", openForm);
+      if (openBtnMobile) openBtnMobile.addEventListener("click", openForm);
+      if (formCloseBtn) formCloseBtn.addEventListener("click", closeForm);
+      if (formOverlay) {
+        formOverlay.addEventListener("click", function (event) {
+          if (event.target === formOverlay) closeForm();
+        });
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          if (navOverlay && navOverlay.classList.contains("nvgi-mobile-open")) closeMenu();
+          if (formOverlay && formOverlay.classList.contains("nvgi-form-open")) closeForm();
+        }
+      });
+
+      /* SCROLL REVEAL */
+      const srElements = document.querySelectorAll("[data-sr]");
+      const srObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("sr-visible");
+              srObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.15,
+        }
+      );
+
+      srElements.forEach((el) => srObserver.observe(el));
+    })();
+  </script>
+</body>
+</html>

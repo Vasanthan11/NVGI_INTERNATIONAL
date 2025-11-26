@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Navbar</title>
+
+  <!-- Google Fonts: Raleway & Roboto -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* Global reset + box-sizing */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #ffffff;
+      color: #111111;
+    }
+
+    /* NAVBAR WRAPPER */
+    .nvgi-navbar-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .nvgi-navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    /* LOGO ONLY (no text) */
+    .nvgi-navbar-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nvgi-navbar-logo img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* DESKTOP NAV LINKS – CENTERED, WRAP TO 2 LINES IF NEEDED */
+    .nvgi-navbar-links {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem 1.5rem; /* row-gap col-gap */
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .nvgi-navbar-links a {
+      text-decoration: none;
+      color: #222222;
+      white-space: nowrap;
+      font-family: "Raleway", system-ui, sans-serif;
+      padding: 0.15rem 0;
+      transition: color 0.15s ease;
+    }
+
+    .nvgi-navbar-links a:hover {
+      color: #0D5EA6;
+    }
+
+    /* DESKTOP BUTTONS / ACTIONS */
+    .nvgi-navbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .nvgi-btn {
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 999px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      font-family: "Raleway", system-ui, sans-serif;
+      background: #0D5EA6;       /* base button color (you can change later) */
+      color: #FFFcfb;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    /* On hover use brown (A16D28) and “dark white” text (#FFFcfb) */
+    .nvgi-btn:hover {
+      background: #A16D28;
+      color: #FFFcfb;
+    }
+
+    .nvgi-btn-outline {
+      background: #FFFcfb;
+      color: #0D5EA6;
+      border: 1px solid #0D5EA6;
+    }
+
+    .nvgi-btn-outline:hover {
+      background: #A16D28;
+      color: #FFFcfb;
+      border-color: #A16D28;
+    }
+
+    /* HAMBURGER (mobile) */
+    .nvgi-navbar-hamburger {
+      display: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid #dddddd;
+      background: #ffffff;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .nvgi-navbar-hamburger span {
+      display: block;
+      width: 16px;
+      height: 2px;
+      background: #111111;
+      position: relative;
+    }
+
+    .nvgi-navbar-hamburger span::before,
+    .nvgi-navbar-hamburger span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 16px;
+      height: 2px;
+      background: #111111;
+    }
+
+    .nvgi-navbar-hamburger span::before {
+      top: -5px;
+    }
+
+    .nvgi-navbar-hamburger span::after {
+      top: 5px;
+    }
+
+    /* MOBILE MENU OVERLAY + BOTTOM SHEET MENU */
+    .nvgi-mobile-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 999;
+    }
+
+    .nvgi-mobile-overlay.nvgi-mobile-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nvgi-mobile-menu {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 70vh;
+      max-height: 480px;
+      background: #ffffff;
+      border-radius: 16px 16px 0 0;
+      transform: translateY(100%);
+      transition: transform 0.25s ease-out;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 1rem 1.25rem;
+    }
+
+    .nvgi-mobile-overlay.nvgi-mobile-open .nvgi-mobile-menu {
+      transform: translateY(0%);
+    }
+
+    .nvgi-mobile-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .nvgi-mobile-menu-title {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nvgi-mobile-close {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid #dddddd;
+      background: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .nvgi-mobile-nav {
+      flex: 1;
+      overflow-y: auto;
+      padding-top: 0.5rem;
+    }
+
+    .nvgi-mobile-nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .nvgi-mobile-nav a {
+      text-decoration: none;
+      color: #111111;
+      font-size: 0.95rem;
+      font-weight: 500;
+      font-family: "Raleway", system-ui, sans-serif;
+    }
+
+    .nvgi-mobile-nav a:hover {
+      color: #0D5EA6;
+    }
+
+    .nvgi-mobile-actions {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    /* RESPONSIVE BREAKPOINTS */
+    @media (max-width: 900px) {
+      .nvgi-navbar {
+        padding-inline: 0.75rem;
+      }
+
+      .nvgi-navbar-links,
+      .nvgi-navbar-actions {
+        display: none;
+      }
+
+      .nvgi-navbar-hamburger {
+        display: inline-flex;
+      }
+    }
+
+    @media (min-width: 901px) {
+      .nvgi-mobile-overlay {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR FRAGMENT -->
+  <div class="nvgi-navbar-wrapper">
+    <header class="nvgi-navbar">
+      <!-- Logo image only -->
+      <a href="index.html" class="nvgi-navbar-logo">
+        <img src="placeholder-logo.png" alt="Company logo" />
+      </a>
+
+      <!-- Desktop Links (centered, will wrap to 2 lines if needed) -->
+      <nav class="nvgi-navbar-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="textile-machinery.html">Textile Machinery Import &amp; Export</a>
+        <a href="rental-boom-scissor-telehandlers.html">Boom Lifts, Scissor Lifts &amp; Telehandlers Rental</a>
+        <a href="used-boom-scissor-machinery-sale.html">Boom Lifts, Scissor Lifts &amp; Used Machinery for Sale</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <!-- Desktop Actions -->
+      <div class="nvgi-navbar-actions">
+        <button type="button" class="nvgi-btn" id="nvgi-open-form-desktop">
+          Get in touch
+        </button>
+
+        <a href="tel:+971507287749" class="nvgi-btn nvgi-btn-outline">
+          Call us
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button
+        class="nvgi-navbar-hamburger"
+        id="nvgi-nav-hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        <span></span>
+      </button>
+    </header>
+  </div>
+
+  <!-- Mobile Menu Overlay + Bottom Sheet -->
+  <div class="nvgi-mobile-overlay" id="nvgi-mobile-overlay" aria-hidden="true">
+    <div class="nvgi-mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+      <div class="nvgi-mobile-menu-header">
+        <div class="nvgi-mobile-menu-title">Menu</div>
+        <button
+          class="nvgi-mobile-close"
+          id="nvgi-mobile-close"
+          aria-label="Close navigation menu"
+        >
+          ×
+        </button>
+      </div>
+
+      <nav class="nvgi-mobile-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="textile-machinery.html">Textile Machinery Import &amp; Export</a></li>
+          <li><a href="rental-boom-scissor-telehandlers.html">Boom Lifts, Scissor Lifts &amp; Telehandlers Rental</a></li>
+          <li><a href="used-boom-scissor-machinery-sale.html">Boom Lifts, Scissor Lifts &amp; Used Machinery for Sale</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nvgi-mobile-actions">
+          <button type="button" class="nvgi-btn" id="nvgi-open-form-mobile">
+            Get in touch
+          </button>
+          <a href="tel:+971507287749" class="nvgi-btn nvgi-btn-outline">
+            Call us
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const hamburger = document.getElementById("nvgi-nav-hamburger");
+      const overlay = document.getElementById("nvgi-mobile-overlay");
+      const closeBtn = document.getElementById("nvgi-mobile-close");
+
+      function openMenu() {
+        if (!overlay) return;
+        overlay.classList.add("nvgi-mobile-open");
+        overlay.setAttribute("aria-hidden", "false");
+        if (hamburger) hamburger.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeMenu() {
+        if (!overlay) return;
+        overlay.classList.remove("nvgi-mobile-open");
+        overlay.setAttribute("aria-hidden", "true");
+        if (hamburger) hamburger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+
+      if (hamburger) {
+        hamburger.addEventListener("click", openMenu);
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener("click", closeMenu);
+      }
+
+      if (overlay) {
+        overlay.addEventListener("click", function (event) {
+          if (event.target === overlay) {
+            closeMenu();
+          }
+        });
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && overlay && overlay.classList.contains("nvgi-mobile-open")) {
+          closeMenu();
+        }
+      });
+
+      // IDs #nvgi-open-form-desktop and #nvgi-open-form-mobile
+      // will be used on each page to open your popup form.
+    })();
+  </script>
+</body>
+</html>
