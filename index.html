@@ -94,7 +94,6 @@
       max-width: 720px;
       line-height: 1.7;
       color: #313131;
-     
     }
 
     /* ========== NAVBAR (same as navbar.html) ========== */
@@ -107,7 +106,7 @@
     }
 
     .nvgi-navbar {
-      max-width: 1200px;
+      max-width: 1900px;
       margin: 0 auto;
       padding: 0.75rem 1rem;
       display: flex;
@@ -125,8 +124,8 @@
     }
 
     .nvgi-navbar-logo img {
-      width: 122px;
-      height: 52px;
+      width: 162px;
+      height: 62px;
       object-fit: cover;
       display: block;
     }
@@ -136,8 +135,8 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.75rem 1.5rem;
-      font-size: 1rem;
+      gap: 0.75rem 2.5rem;
+      font-size: 0.93rem;
       font-weight: 500;
       text-align: center;
       line-height: 22px;
@@ -147,7 +146,7 @@
       text-decoration: none;
       color: #222222;
       white-space: nowrap;
-      font-family: "Raleway", system-ui, sans-serif;
+      font-family: inherit; /* inherit Agency FB from header */
       padding: 0.15rem 0;
       transition: color 0.15s ease;
     }
@@ -175,7 +174,7 @@
       align-items: center;
       justify-content: center;
       white-space: nowrap;
-      font-family: "Raleway", system-ui, sans-serif;
+      font-family: inherit; /* inherit navbar font when inside header */
       background: var(--nvgi-blue);
       color: var(--nvgi-cream);
       transition: background-color 0.15s ease, color 0.15s ease, transform 0.08s ease;
@@ -1026,6 +1025,120 @@
       border: 1px solid #ece0cb;
     }
 
+    /* ========== BOTTOM VISIBLE FORM SECTION ========== */
+    .nvgi-bottom-form-section {
+      background: #ffffff;
+    }
+
+    .nvgi-bottom-form-box {
+      border-radius: 20px;
+      border: 1px solid #eceef3;
+      background: radial-gradient(circle at top, #f7f9ff 0, #ffffff 55%, #fff3e4 100%);
+      padding: 1.8rem 1.6rem;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.06);
+      max-width: 920px;
+      margin: 1.8rem auto 0;
+    }
+
+    .nvgi-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      .nvgi-form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .nvgi-form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 1rem;
+    }
+
+    .nvgi-form-label {
+      font-family: "Raleway", system-ui, sans-serif;
+      font-weight: 500;
+      color: #222222;
+    }
+
+    .nvgi-form-label span {
+      color: #E63946;
+    }
+
+    .nvgi-form-input,
+    .nvgi-form-select,
+    .nvgi-form-textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #d7dde5;
+      padding: 0.55rem 0.6rem;
+      font-size: 1rem;
+      font-family: "Roboto", system-ui, sans-serif;
+      outline: none;
+      background: var(--nvgi-cream);
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+      appearance: none;
+    }
+
+    .nvgi-form-input:focus,
+    .nvgi-form-select:focus,
+    .nvgi-form-textarea:focus {
+      border-color: var(--nvgi-blue);
+      box-shadow: 0 0 0 1px rgba(13, 94, 166, 0.12);
+      background: #ffffff;
+    }
+
+    .nvgi-form-textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .nvgi-form-footer {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .nvgi-btn-submit {
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      padding: 0.7rem 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 999px;
+      font-family: "Raleway", system-ui, sans-serif;
+      background: var(--nvgi-blue);
+      color: var(--nvgi-cream);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.08s ease;
+    }
+
+    .nvgi-btn-submit:hover {
+      background: var(--nvgi-brown);
+      color: var(--nvgi-cream);
+    }
+
+    .nvgi-btn-submit:active {
+      transform: translateY(1px);
+    }
+
+    .nvgi-form-note {
+      font-size: 0.95rem;
+      color: #666666;
+      line-height: 1.4;
+    }
+
+    .nvgi-form-note strong {
+      font-weight: 600;
+    }
+
     /* ========== FOOTER ========== */
     footer {
       width: 100%;
@@ -1230,110 +1343,7 @@
       color: #444444;
     }
 
-    .nvgi-form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem 0.75rem;
-    }
-
-    @media (max-width: 720px) {
-      .nvgi-form-modal {
-        flex-direction: column;
-      }
-      .nvgi-form-sidebar {
-        width: 100%;
-      }
-      .nvgi-form-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .nvgi-form-field {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-      font-size: 1rem;
-    }
-
-    .nvgi-form-label {
-      font-family: "Raleway", system-ui, sans-serif;
-      font-weight: 500;
-      color: #222222;
-    }
-
-    .nvgi-form-label span {
-      color: #E63946;
-    }
-
-    .nvgi-form-input,
-    .nvgi-form-select,
-    .nvgi-form-textarea {
-      width: 100%;
-      border-radius: 10px;
-      border: 1px solid #d7dde5;
-      padding: 0.55rem 0.6rem;
-      font-size: 1rem;
-      font-family: "Roboto", system-ui, sans-serif;
-      outline: none;
-      background: var(--nvgi-cream);
-      transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
-      appearance: none;
-    }
-
-    .nvgi-form-input:focus,
-    .nvgi-form-select:focus,
-    .nvgi-form-textarea:focus {
-      border-color: var(--nvgi-blue);
-      box-shadow: 0 0 0 1px rgba(13, 94, 166, 0.12);
-      background: #ffffff;
-    }
-
-    .nvgi-form-textarea {
-      min-height: 80px;
-      resize: vertical;
-    }
-
-    .nvgi-form-footer {
-      margin-top: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
-    }
-
-    .nvgi-btn-submit {
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      padding: 0.7rem 1rem;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 999px;
-      font-family: "Raleway", system-ui, sans-serif;
-      background: var(--nvgi-blue);
-      color: var(--nvgi-cream);
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      transition: background-color 0.15s ease, color 0.15s ease, transform 0.08s ease;
-    }
-
-    .nvgi-btn-submit:hover {
-      background: var(--nvgi-brown);
-      color: var(--nvgi-cream);
-    }
-
-    .nvgi-btn-submit:active {
-      transform: translateY(1px);
-    }
-
-    .nvgi-form-note {
-      font-size: 0.95rem;
-      color: #666666;
-      line-height: 1.4;
-    }
-
-    .nvgi-form-note strong {
-      font-weight: 600;
-    }
+    /* popup form reuses .nvgi-form-grid, .nvgi-form-field, .nvgi-form-input etc */
 
     /* ========== SCROLL REVEAL ========== */
     [data-sr] {
@@ -1354,27 +1364,31 @@
       opacity: 1;
       transform: translateX(0) translateY(0);
     }
+
     .bl-location-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,0.14);
-  background-color: #0D5EA6;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #ffff;
-  margin-bottom: 0.8rem;
-}
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.14);
+      background-color: #0D5EA6;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ffff;
+      margin-bottom: 0.8rem;
+    }
   </style>
 </head>
 <body>
 
   <!-- NAVBAR -->
   <div class="nvgi-navbar-wrapper">
-    <header class="nvgi-navbar">
+    <header
+      class="nvgi-navbar"
+      style="font-family: 'system-ui', 'Raleway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;"
+    >
       <a href="index.html" class="nvgi-navbar-logo">
         <!-- Replace this with your logo -->
         <img src="./images/logo-nv.png" alt="Company logo" />
@@ -1382,9 +1396,9 @@
 
       <nav class="nvgi-navbar-links" aria-label="Primary navigation">
         <a href="index.html">Home</a>
-        <a href="textile-machinery.html">Textile Machinery <br> Import &amp; Export</a>
-        <a href="rental-boom-scissor-telehandlers.html">Boom Lifts, Scissor Lifts <br> &amp; Telehandlers Rental</a>
-        <a href="used-boom-scissor-machinery-sale.html">Boom Lifts, Scissor Lifts  <br> &amp; Used Machinery for Sale</a>
+        <a href="textile-machinery.html">Textile Machinery Import &amp; Export</a>
+        <a href="rental-boom-scissor-telehandlers.html">Boom Lifts, Scissor Lifts &amp; Telehandlers Rental</a>
+        <a href="used-boom-scissor-machinery-sale.html">Boom Lifts, Scissor Lifts &amp; Used Machinery for Sale</a>
         <a href="contact.html">Contact</a>
       </nav>
 
@@ -1448,10 +1462,9 @@
     <section class="nvgi-section nvgi-hero">
       <div class="nvgi-container nvgi-hero-inner">
         <div data-sr="left">
-           <div class="bl-location-chip">
-        <span class="bl-location-chip-dot"></span>
-        <span>Our Location: Dubai, UAE</span>
-      </div>
+          <div class="bl-location-chip">
+            <span>Our Location: Dubai, UAE</span>
+          </div>
           <div class="nvgi-hero-kicker">Import • Export • Rental • Used Sales</div>
           <h1 class="nvgi-hero-title">
             Machinery solutions for Textile &amp; Construction
@@ -1516,8 +1529,7 @@
 
           <!-- HERO IMAGE -->
           <div class="nvgi-hero-image">
-            <!-- replace with real hero image -->
-            <img src="./images/bb3.webp" alt="Textile & construction machinery" />
+            <img src="./images/new7.webp" alt="Textile & construction machinery" />
           </div>
         </aside>
       </div>
@@ -1620,7 +1632,6 @@
           <!-- Visually rich side with images -->
           <div class="nvgi-import-visual" data-sr="right">
             <div class="nvgi-import-main-image">
-              <!-- replace -->
               <img src="./images/bb2.webp" alt="Import and export machinery operations" />
             </div>
             <div class="nvgi-import-thumbs">
@@ -1850,54 +1861,37 @@
         <div class="nvgi-gallery-layout">
           <!-- Image-only grid with hover -->
           <div class="nvgi-gallery-grid" data-sr="left">
-            <!-- Replace src with your images -->
             <div class="nvgi-gallery-item">
               <img src="./images/s5.webp" alt="Boom lift" />
-              <div class="nvgi-gallery-overlay">
-                <!-- <div class="nvgi-gallery-label">Boom Lifts – Rental &amp; Used</div> -->
-              </div>
+              <div class="nvgi-gallery-overlay"></div>
             </div>
             <div class="nvgi-gallery-item">
               <img src="./images/s6.jpg" alt="Scissor lift" />
-              <div class="nvgi-gallery-overlay">
-                <!-- <div class="nvgi-gallery-label">Scissor Lifts – Site Access</div> -->
-              </div>
+              <div class="nvgi-gallery-overlay"></div>
             </div>
             <div class="nvgi-gallery-item">
               <img src="./images/sp7.jpeg" alt="Telehandler" />
-              <div class="nvgi-gallery-overlay">
-                <!-- <div class="nvgi-gallery-label">Telehandlers – Material Handling</div> -->
-              </div>
+              <div class="nvgi-gallery-overlay"></div>
             </div>
             <div class="nvgi-gallery-item">
               <img src="./images/sc01.webp" alt="Excavator" />
-              <div class="nvgi-gallery-overlay">
-                <!-- <div class="nvgi-gallery-label">Excavators &amp; Loaders</div> -->
-              </div>
+              <div class="nvgi-gallery-overlay"></div>
             </div>
             <div class="nvgi-gallery-item">
               <img src="./images/new10.jpg" alt="Concrete equipment" />
-              <div class="nvgi-gallery-overlay">
-                <!-- <div class="nvgi-gallery-label">Concrete &amp; Lifting</div> -->
-              </div>
+              <div class="nvgi-gallery-overlay"></div>
             </div>
             <div class="nvgi-gallery-item">
               <img src="./images/sp3.png" alt="Textile machinery" />
-              <div class="nvgi-gallery-overlay">
-                <!-- <div class="nvgi-gallery-label">Textile Machinery – Import/Export</div> -->
-              </div>
+              <div class="nvgi-gallery-overlay"></div>
             </div>
             <div class="nvgi-gallery-item">
               <img src="./images/new6.webp" alt="Fleet yard" />
-              <div class="nvgi-gallery-overlay">
-                <!-- <div class="nvgi-gallery-label">Rental Fleet Overview</div> -->
-              </div>
+              <div class="nvgi-gallery-overlay"></div>
             </div>
             <div class="nvgi-gallery-item">
               <img src="./images/sp6.jpg" alt="Custom machinery" />
-              <div class="nvgi-gallery-overlay">
-                <!-- <div class="nvgi-gallery-label">Custom Requests</div> -->
-              </div>
+              <div class="nvgi-gallery-overlay"></div>
             </div>
           </div>
 
@@ -1933,6 +1927,143 @@
               Focus: Textile &amp; Construction Machinery
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: BOTTOM VISIBLE CONTACT FORM -->
+    <section class="nvgi-section nvgi-bottom-form-section" id="bottom-contact-form">
+      <div class="nvgi-container">
+        <div data-sr="left">
+          <div class="nvgi-section-kicker">Send a detailed enquiry</div>
+          <h2 class="nvgi-section-title">
+            Contact form – import/export, rental or used machinery
+          </h2>
+          <p class="nvgi-section-text">
+            Use the form below to share your details and machinery requirements. You can specify whether you are
+            looking at rental, used sales or import/export support along with basic project information.
+          </p>
+        </div>
+
+        <div class="nvgi-bottom-form-box" data-sr="right">
+          <form action="submit-form.php" method="post" class="nvgi-form" autocomplete="on">
+            <div class="nvgi-form-grid">
+              <div class="nvgi-form-field">
+                <label for="contact-name" class="nvgi-form-label">
+                  Name <span>*</span>
+                </label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  class="nvgi-form-input"
+                  placeholder="Your full name"
+                  required
+                />
+              </div>
+
+              <div class="nvgi-form-field">
+                <label for="contact-company" class="nvgi-form-label">
+                  Company
+                </label>
+                <input
+                  type="text"
+                  id="contact-company"
+                  name="company"
+                  class="nvgi-form-input"
+                  placeholder="Your company name (optional)"
+                />
+              </div>
+
+              <div class="nvgi-form-field">
+                <label for="contact-mobile" class="nvgi-form-label">
+                  Mobile number <span>*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="contact-mobile"
+                  name="mobile"
+                  class="nvgi-form-input"
+                  placeholder="+971 50 000 0000"
+                  required
+                />
+              </div>
+
+              <div class="nvgi-form-field">
+                <label for="contact-email" class="nvgi-form-label">
+                  Email <span>*</span>
+                </label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  class="nvgi-form-input"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+
+              <div class="nvgi-form-field">
+                <label for="contact-section" class="nvgi-form-label">
+                  Section (Sale or Rent) <span>*</span>
+                </label>
+                <select
+                  id="contact-section"
+                  name="section"
+                  class="nvgi-form-select"
+                  required
+                >
+                  <option value="" disabled selected>Select section</option>
+                  <option value="rental">Rental</option>
+                  <option value="sale">Sale</option>
+                  <option value="import_export">Import / Export</option>
+                  <option value="both">Combination / Not sure</option>
+                </select>
+              </div>
+
+              <div class="nvgi-form-field">
+                <label for="contact-equipment" class="nvgi-form-label">
+                  Equipment type <span>*</span>
+                </label>
+                <select
+                  id="contact-equipment"
+                  name="equipment_type"
+                  class="nvgi-form-select"
+                  required
+                >
+                  <option value="" disabled selected>Select equipment</option>
+                  <option value="textile_machinery">Textile machinery</option>
+                  <option value="boom_lifts">Boom lifts</option>
+                  <option value="scissor_lifts">Scissor lifts</option>
+                  <option value="telehandlers">Telehandlers</option>
+                  <option value="other">Other machinery</option>
+                </select>
+              </div>
+
+              <div class="nvgi-form-field" style="grid-column: 1 / -1;">
+                <label for="contact-message" class="nvgi-form-label">
+                  Requirements / message
+                </label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  class="nvgi-form-textarea"
+                  placeholder="Eg. Application type, working height, quantity, rental duration or import/export route, location…"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="nvgi-form-footer">
+              <button type="submit" class="nvgi-btn-submit">
+                Submit enquiry
+              </button>
+
+              <p class="nvgi-form-note">
+                By submitting this form you agree to be contacted by
+                <strong>NVGI International DMCC</strong> by phone or email regarding your request.
+              </p>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -2053,7 +2184,6 @@
                   name="email"
                   class="nvgi-form-input"
                   placeholder="you@example.com"
-                  
                 />
               </div>
 
@@ -2065,7 +2195,6 @@
                   id="nvgi-section"
                   name="section"
                   class="nvgi-form-select"
-                
                 >
                   <option value="" disabled selected>Select section</option>
                   <option value="rental">Rental</option>
@@ -2082,7 +2211,6 @@
                   id="nvgi-equipment"
                   name="equipment_type"
                   class="nvgi-form-select"
-                  
                 >
                   <option value="" disabled selected>Select equipment</option>
                   <option value="boom_lifts">Boom lifts</option>

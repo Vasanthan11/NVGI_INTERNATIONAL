@@ -98,7 +98,7 @@
     }
 
     /* ========== NAVBAR (same as navbar.html) ========== */
-    .nvgi-navbar-wrapper {
+     .nvgi-navbar-wrapper {
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -107,7 +107,7 @@
     }
 
     .nvgi-navbar {
-      max-width: 1200px;
+      max-width: 1900px;
       margin: 0 auto;
       padding: 0.75rem 1rem;
       display: flex;
@@ -125,8 +125,8 @@
     }
 
     .nvgi-navbar-logo img {
-      width: 122px;
-      height: 52px;
+      width: 162px;
+      height: 62px;
       object-fit: cover;
       display: block;
     }
@@ -136,8 +136,8 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.75rem 1.5rem;
-      font-size: 1rem;
+      gap: 0.75rem 2.5rem;
+      font-size: 0.93rem;
       font-weight: 500;
       text-align: center;
       line-height: 22px;
@@ -147,7 +147,7 @@
       text-decoration: none;
       color: #222222;
       white-space: nowrap;
-      font-family: "Raleway", system-ui, sans-serif;
+      font-family: inherit; /* inherit Agency FB from header */
       padding: 0.15rem 0;
       transition: color 0.15s ease;
     }
@@ -175,7 +175,7 @@
       align-items: center;
       justify-content: center;
       white-space: nowrap;
-      font-family: "Raleway", system-ui, sans-serif;
+      font-family: inherit; /* inherit navbar font when inside header */
       background: var(--nvgi-blue);
       color: var(--nvgi-cream);
       transition: background-color 0.15s ease, color 0.15s ease, transform 0.08s ease;
@@ -238,6 +238,7 @@
       top: 5px;
     }
 
+    /* MOBILE NAV MENU */
     .nvgi-mobile-overlay {
       position: fixed;
       inset: 0;
@@ -1323,17 +1324,20 @@
 
   <!-- NAVBAR -->
   <div class="nvgi-navbar-wrapper">
-    <header class="nvgi-navbar">
-       <a href="index.html" class="nvgi-navbar-logo">
+    <header
+      class="nvgi-navbar"
+      style="font-family: 'system-ui', 'Raleway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;"
+    >
+      <a href="index.html" class="nvgi-navbar-logo">
         <!-- Replace this with your logo -->
         <img src="./images/logo-nv.png" alt="Company logo" />
       </a>
 
       <nav class="nvgi-navbar-links" aria-label="Primary navigation">
         <a href="index.html">Home</a>
-        <a href="textile-machinery.html">Textile Machinery <br> Import &amp; Export</a>
-        <a href="rental-boom-scissor-telehandlers.html">Boom Lifts, Scissor Lifts <br> &amp; Telehandlers Rental</a>
-        <a href="used-boom-scissor-machinery-sale.html">Boom Lifts, Scissor Lifts <br> &amp; Used Machinery for Sale</a>
+        <a href="textile-machinery.html">Textile Machinery Import &amp; Export</a>
+        <a href="rental-boom-scissor-telehandlers.html">Boom Lifts, Scissor Lifts &amp; Telehandlers Rental</a>
+        <a href="used-boom-scissor-machinery-sale.html">Boom Lifts, Scissor Lifts &amp; Used Machinery for Sale</a>
         <a href="contact.html">Contact</a>
       </nav>
 
